@@ -30,15 +30,20 @@ Novi Sad, maj 2022. god.
 \end{center}
 \pagebreak
 
-# Sadrzaj
-1. [Uvod]
-2. [Komponente]
-3. [Komande]
-4. [Hijerarhija sistema datoteka]
-5. [Radna površina]
-6. [Zaključak]
-7. [Literatura]
+# Sadržaj
+1. [Predgovor]
+2. [Uvod]
+3. [Komponente]
+4. [Komande]
+5. [Hijerarhija sistema datoteka]
+6. [Radna površina]
+7. [Zaključak]
+8. [Literatura]
 \pagebreak
+
+# Predgovor
+<p>Za ovu temu sam se opredelio iz više razloga. Prvenstveno zbog ljubavi prema informacionim tehnologijama, koju sam stekao zahvaljujući mojim roditeljima. Drugi razlog je to što smatram da je ovo veoma fascinantna tema, jer obuhvata kompleksnost koje se moze postići kada na jednom projektu radi čitav svet. Na kraju, ono što me je privuklo da izaberem baš ovu temu, jeste činjenica da je budućnost IT-a slobodan i besplatan kod.</p>
+<p>U ovom radu, analiziraću osnovne komponente jednog izuzetnog operativnog sistema, istoriju njegove kreacije kao i filozofski pogled na isti.</p>
 
 # Uvod
 <p>Unix su stvorili i objavili Ken Thompson i Dennis Ritchie 1970. godine. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unixa, npr. BSD koji je nalik Linuxa i dan danas u upotrebi.</p>
