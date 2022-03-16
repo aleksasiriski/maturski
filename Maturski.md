@@ -39,10 +39,11 @@ Novi Sad, maj 2022. god.
 6. [Radna površina]
 7. [Zaključak]
 8. [Literatura]
+9. [BIOGRAFIJA MATURANTA]
 \pagebreak
 
 # Predgovor
-<p>Za ovu temu sam se opredelio iz više razloga. Prvenstveno zbog ljubavi prema informacionim tehnologijama, koju sam stekao zahvaljujući mojim roditeljima. Drugi razlog je to što smatram da je ovo veoma fascinantna tema, jer obuhvata kompleksnost koje se moze postići kada na jednom projektu radi čitav svet. Na kraju, ono što me je privuklo da izaberem baš ovu temu, jeste činjenica da je budućnost IT-a slobodan i besplatan kod.</p>
+<p>Za ovu temu sam se opredelio iz više razloga. Prvenstveno zbog ljubavi prema informacionim tehnologijama, koju sam stekao zahvaljujući mojim roditeljima. Drugi razlog je to što smatram da je ovo veoma fascinantna tema, jer obuhvata kompleksnost koje se može postići kada na jednom projektu radi čitav svet. Na kraju, ono što me je privuklo da izaberem baš ovu temu, jeste činjenica da je budućnost IT-a slobodan i besplatan kod.</p>
 <p>U ovom radu, analiziraću osnovne komponente jednog izuzetnog operativnog sistema, istoriju njegove kreacije kao i filozofski pogled na isti.</p>
 \pagebreak
 
@@ -72,3 +73,6 @@ Novi Sad, maj 2022. god.
 \pagebreak
 
 # Literatura
+\pagebreak
+# BIOGRAFIJA MATURANTA
+<p>Aleksa Siriški rođen je 10. jula 2003. godine u Novom Sadu. Pohađao je Osnovnu školu „Svetozar Marković Toza“ do šestog razreda. Tamo stiče interesovanje za matematiku, fiziku, informatiku i jezike. Septembra 2016. upisuje Osnovnu školu pri Gimnaziji „Jovan Jovanović Zmaj“, kako bi intenzivnije radio u oblastima matematike, fizike i informatike. Istovremeno pohađa programerski kurs „Centar za mlade talente“. Školovanje nastavlja u istoj gimnaziji i opredeljuje se za smer „Učenici sa posebnim sposobnostima za računarstvo i informatiku“. Naredne četiri godine, uporedo sa školom, pohađa i kurseve engleskog i nemačkog jezika. Planira da više obrazovanje stekne na Prirodno matematičkom fakultetu, smer Informacione tehnologije.</p>
