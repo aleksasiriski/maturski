@@ -79,7 +79,7 @@ U ovom radu, analiziraću osnovne komponente jednog izuzetnog operativnog sistem
 \cfoot{\thepage}
 
 \section{Istorija}
-Unix su stvorili i objavili Ken Thompson i Dennis Ritchie 1970. godine. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je nalik Linuxa i dan danas u upotrebi.
+1960. godine, MIT u saradnji sa drugim kompanijama su napravili eksperimentalni operativni sistem zvan Multics (Multiplexed Information and Computing Service). Unics (danas UNIX) su kasnije stvorili i objavili Ken Thompson i Dennis Ritchie iz AT\&T 1970. godine kao sopstvenu verziju Multics-a. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je nalik Linuxa i dan danas u upotrebi.
 \\\\
 Richard Matthew Stallman, osnivač GNU projekta, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
 \\\\
@@ -100,6 +100,7 @@ Linus Torvalds koji je bio iznerviran nedostatkom kernela za potpuno slobodan i 
 \newpage
 
 \section{Komponente}
+
 \subsection{Distribucije}
 GNU/Linux operativni sistem se može samostalno napraviti od nule, kompajliranjem svih potrebnih programa (npr. Linux From Scratch), ali se najčešće koriste već gotove distribucije. Sve distribucije dele jednu stvar, Linux kernel, ali po svemu drugom se mogu potpuno razlikovati, doduše većina distribucija ima neke zajedničke osnovne komponente.
 \\\\
@@ -124,16 +125,54 @@ Takođe postoje minimalne distribucije pravljene za kontejnere:
 \item openSUSE MicroOS
 \end{itemize}
 \newpage
+
 \subsection{Kernel}
 Kernel je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku komponentu koja je potrebna za korišćenje OS-a kao i da dozvoli komunikaciju softvera sa hardverom, ili jednog softvera sa drugim. Kernel je neophodan da bi operativni sistem funkcionisao i kao takav je ključno da je minimalan i efikasan.
-\\\\
-Osnovni delovi kernela su:
+
+\subsubsection{Kategorije kernela}
+\begin{itemize}
+\item Monolitski - svi servisi operativnog sistema se nalaze u njemu i izvršavaju se u prostoru samog kernela (eng. kernel space). Ima zavisnosti (eng. dependencies) između sistemskih komponenti i ogromne količine linija koda što ga čini veoma kompleksnim.
+\begin{itemize}
+\item Unix
+\item Linux
+\item Open VMS
+\item XTS-400
+\end{itemize}
+\item Microkernel - minimalistički, ima virtualnu memoriju i raspoređivanje niti (eng. thread scheduling). Samim tim što je manje je i stabilniji, ali zato ima mnogo više sistemskih poziva jer stavlja sve druge procese u korisnički prostor (eng. user space).
+\begin{itemize}
+\item Mach (MacOS)
+\item L4
+\item AmigaOS
+\item Minix
+\item K42
+\end{itemize}
+\item Hibridni - Mešavina monolitskog i micro kernela. Ima brzinu i dizajn monolitskog ali modularnost i stabilnost microkernela.
+\begin{itemize}
+\item Windows NT
+\item Netware
+\item BeOS
+\end{itemize}
+\item Exokernel - prati end-to-end princip, ima najmanju apstrakciju hardvera i direktno dodeljuje fizičke resurse aplikacijama.
+\item Nanokernel - samo apstrakcija hardvera, bez sistemskih servisa. Veoma sličan microkernelu.
+\end{itemize}
+\newpage
+
+\subsubsection{Osnovni delovi Linux kernela}
 \begin{itemize}
 \item Menadžer procesa - kao što mu ime implicira služi da rukuje procesima tj. programima. Svaki proces je zapravo svoj virtualni procesor, nazvan nit (eng. thread). Programi mogu alocirati više niti, zvani radnici (eng. workers). Termin proces i nit su istog značenja, mada je proces više popularan u Desktop aplikacijama.
 \item Menadžer memorije - memorija u Linuxu je programima predstavljena kao gomila stranica (eng. pages) koje su potom multiplicirane i dodeljivane po zahtevu tog programa. Standard su stranice od 4KB. Takođe, stranice je moguće prebaciti sa sistemske RAM memorije na hard disk, takav postupak se naziva swapping.
-\item Drajveri - kod koji sačini najveći deo linux kernela, omogućava korišćenje određenog hardvera.
+\item Drajveri - kod koji čini najveći deo linux kernela, omogućava korišćenje određenog hardvera.
 \item Virtualni sistem datoteka (eng. VFS) - apstraktuje osnovne komande za manipulaciju podataka čime omogućava korišćenje raznovrsnih sistema datoteka (eng. filesystems).
 \end{itemize}
+\newpage
+
+\subsection{Bootloader}
+\newpage
+\subsection{Shell}
+\newpage
+\subsection{Daemons}
+\newpage
+\subsection{Display server}
 \newpage
 
 \section{Komande}
