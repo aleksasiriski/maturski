@@ -18,6 +18,7 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{subfig}
+\usepackage{fancyhdr}
 
 \graphicspath{ {./img/} }
 
@@ -68,6 +69,12 @@ U ovom radu, analiziraću osnovne komponente jednog izuzetnog operativnog sistem
 \renewcommand{\contentsname}{Sadržaj}
 \tableofcontents
 \newpage
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Operativni sistem Linux}
+\rhead{Aleksa Siriški, IV-6}
+\cfoot{\thepage}
 
 \section{Istorija}
 Unix su stvorili i objavili Ken Thompson i Dennis Ritchie 1970. godine. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unixa, npr. BSD koji je nalik Linuxa i dan danas u upotrebi.
