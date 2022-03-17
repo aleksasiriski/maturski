@@ -79,7 +79,7 @@ U ovom radu, analiziraću osnovne komponente jednog izuzetnog operativnog sistem
 \cfoot{\thepage}
 
 \section{Istorija}
-Unix su stvorili i objavili Ken Thompson i Dennis Ritchie 1970. godine. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unixa, npr. BSD koji je nalik Linuxa i dan danas u upotrebi.
+Unix su stvorili i objavili Ken Thompson i Dennis Ritchie 1970. godine. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je nalik Linuxa i dan danas u upotrebi.
 \\\\
 Richard Matthew Stallman, osnivač GNU projekta, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
 \\\\
@@ -87,7 +87,7 @@ Linus Torvalds koji je bio iznerviran nedostatkom kernela za potpuno slobodan i 
 \\\\
 \begin{figure}[h]
 	\centering
-    \subfloat[Ken Thompson i Dennis Ritchie, tvorci UNIX-a]{{\includegraphics[height=3cm,width=4cm]{ken-thompson-dennis-ritchie} }}
+    \subfloat[Ken Thompson i Dennis Ritchie, tvorci Unix-a]{{\includegraphics[height=3cm,width=4cm]{ken-thompson-dennis-ritchie} }}
     \hspace{1cm}
     \subfloat[Linus Torvalds, tvorac Linux-a]{{\includegraphics[height=3cm,width=4cm]{linus-torvalds} }}
 \end{figure}
@@ -100,6 +100,40 @@ Linus Torvalds koji je bio iznerviran nedostatkom kernela za potpuno slobodan i 
 \newpage
 
 \section{Komponente}
+\subsection{Distribucije}
+GNU/Linux operativni sistem se može samostalno napraviti od nule, kompajliranjem svih potrebnih programa (npr. Linux From Scratch), ali se najčešće koriste već gotove distribucije. Sve distribucije dele jednu stvar, Linux kernel, ali po svemu drugom se mogu potpuno razlikovati, doduše većina distribucija ima neke zajedničke osnovne komponente.
+\\\\
+Postoje distribucije pravljene za servere:
+\begin{itemize}
+\item Debian
+\item Ubuntu server
+\item CentOS
+\item Turnkey
+\end{itemize}
+Kao i distribucije pravljene za desktop korisnike:
+\begin{itemize}
+\item Ubuntu
+\item Linux Mint
+\item PopOS
+\item Fedora Workstation
+\end{itemize}
+Takođe postoje minimalne distribucije pravljene za kontejnere:
+\begin{itemize}
+\item Alpine Linux
+\item Fedora CoreOS
+\item openSUSE MicroOS
+\end{itemize}
+\newpage
+\subsection{Kernel}
+Kernel je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku komponentu koja je potrebna za korišćenje OS-a kao i da dozvoli komunikaciju softvera sa hardverom, ili jednog softvera sa drugim. Kernel je neophodan da bi operativni sistem funkcionisao i kao takav je ključno da je minimalan i efikasan.
+\\\\
+Osnovni delovi kernela su:
+\begin{itemize}
+\item Menadžer procesa - kao što mu ime implicira služi da rukuje procesima tj. programima. Svaki proces je zapravo svoj virtualni procesor, nazvan nit (eng. thread). Programi mogu alocirati više niti, zvani radnici (eng. workers). Termin proces i nit su istog značenja, mada je proces više popularan u Desktop aplikacijama.
+\item Menadžer memorije - memorija u Linuxu je programima predstavljena kao gomila stranica (eng. pages) koje su potom multiplicirane i dodeljivane po zahtevu tog programa. Standard su stranice od 4KB. Takođe, stranice je moguće prebaciti sa sistemske RAM memorije na hard disk, takav postupak se naziva swapping.
+\item Drajveri - kod koji sačini najveći deo linux kernela, omogućava korišćenje određenog hardvera.
+\item Virtualni sistem datoteka (eng. VFS) - apstraktuje osnovne komande za manipulaciju podataka čime omogućava korišćenje raznovrsnih sistema datoteka (eng. filesystems).
+\end{itemize}
 \newpage
 
 \section{Komande}
