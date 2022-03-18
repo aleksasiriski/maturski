@@ -94,15 +94,13 @@ Linus Torvalds koji je bio iznerviran nedostatkom kernela za potpuno slobodan i 
 \end{figure}
 \begin{figure}[h]
 	\centering
-    \subfloat[Linux]{{\includegraphics[height=3cm,width=4cm]{linux} }}
+    \subfloat[Linux logo]{{\includegraphics[height=3cm,width=4cm]{linux} }}
     \hspace{1cm}
     \subfloat[Richard Matthew Stallman, tvorac GNU-a]{{\includegraphics[height=3cm,width=4cm]{richard-stallman} }}
 \end{figure}
 \newpage
 
-\section{Komponente}
-
-\subsection{Distribucije}
+\section{Distribucije}
 GNU/Linux operativni sistem se može samostalno napraviti od nule, kompajliranjem svih potrebnih programa (npr. Linux From Scratch), ali se najčešće koriste već gotove distribucije. Sve distribucije dele jednu stvar, Linux kernel, ali po svemu drugom se mogu potpuno razlikovati, doduše većina distribucija ima neke zajedničke osnovne komponente.
 \\\\
 Postoje distribucije pravljene za servere:
@@ -125,8 +123,16 @@ Takođe postoje minimalne distribucije pravljene za kontejnere:
 \item Fedora CoreOS
 \item openSUSE MicroOS
 \end{itemize}
+\begin{figure}[h]
+	\centering
+    \subfloat[Debian]{{\includegraphics[height=3cm,width=3cm]{debian} }}
+    \subfloat[Ubuntu]{{\includegraphics[height=3cm,width=3cm]{ubuntu} }}
+    \subfloat[Fedora]{{\includegraphics[height=3cm,width=3cm]{fedora} }}
+    \subfloat[Arch]{{\includegraphics[height=3cm,width=3cm]{arch} }}
+\end{figure}
 \newpage
 
+\section{Komponente}
 \subsection{Kernel}
 Kernel je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku komponentu koja je potrebna za korišćenje OS-a kao i da dozvoli komunikaciju softvera sa hardverom, ili jednog softvera sa drugim. Kernel je neophodan da bi operativni sistem funkcionisao i kao takav je ključno da je minimalan i efikasan.
 
@@ -277,7 +283,7 @@ Okruženja radne površine su skupovi programa koji omogućavaju korišćenje gr
 \newpage
 
 \section{Kontejnerizacija}
-Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je baš Linux izbor za 99\% servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćinskim operativnim sistemom (eng. host OS) i time štede i na veličini i performanse ostaju identične kao da je program lokalno instaliram.
+Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je baš Linux izbor za 99\% servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćinskim operativnim sistemom (eng. host OS) i time štede na veličini.
 \subsection{Vrste kontejnerskih okruženja}
 \begin{itemize}
 \item Linux Containers (LXC) - najprostiji vid korišćenja kontejnera na Linuxu, korišćenjem cgroups iz kernela omogućeno je kreairanje više kontejnera na jednom domaćinu.
@@ -293,15 +299,21 @@ Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost
 \newpage
 
 \section{Literatura}
-www.linfo.org
+\href{http://www.linfo.org}{The Linux Information Project}
 \\
-www.tldp.org
+\href{https://tldp.org}{The Linux Documentation Project}
 \\
-wiki.archlinux.org
+\href{https://www.redhat.com}{Red Hat}
 \\
-www.redhat.com
+\href{https://wiki.archlinux.org}{Arch Wiki}
 \\
-www.geeksforgeeks.org
+\href{https://askubuntu.com}{Ask Ubuntu}
+\\
+\href{https://www.geeksforgeeks.org}{Geeks for Geeks}
+\\
+\href{https://unix.stackexchange.com}{Unix \& Linux Stack Exchange}
+\\
+\href{https://superuser.com}{Super User}
 \newpage
 
 \section{BIOGRAFIJA MATURANTA}
