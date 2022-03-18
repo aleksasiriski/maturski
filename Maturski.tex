@@ -145,7 +145,7 @@ Kernel je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku ko
 \item Open VMS
 \item XTS-400
 \end{itemize}
-\item Microkernel - minimalistički, ima virtualnu memoriju i raspoređivanje niti (eng. thread scheduling). Samim tim što je manje je i stabilniji, ali zato ima mnogo više sistemskih poziva jer stavlja sve druge procese u korisnički prostor (eng. user space).
+\item Microkernel - minimalistički, ima virtualnu memoriju i raspoređivanje niti (eng. thread scheduling). Samim tim što je manji je i stabilniji, ali zato ima mnogo više sistemskih poziva jer stavlja sve druge procese u korisnički prostor (eng. user space).
 \begin{itemize}
 \item GNU Hurd
 \item Mach (MacOS)
@@ -201,44 +201,45 @@ Init je prvi program koji se pokreće nakon kernela, automatski postaje roditelj
 \newpage
 
 \subsection{Shell}
-Shell služi da korisniku pruži isključivo tekstualni interfejs, naziv ljuska upućuje da je to spoljni deo operativnog sistema. Korisnik unosi komande i dobija odgovore. Osim pokretanja programa shell može koristi izlaz (eng. output) jedne komande kao ulaz (eng. input) druge, to se naziva piping (prvo uveden u UNIX-u). Takođe, može da se koristi i kao programski jezik pri pisanju shell skripti.
+Shell služi da korisniku pruži isključivo tekstualni interfejs, naziv ljuska upućuje da je to spoljni deo operativnog sistema. Korisnik unosi komande i dobija odgovore. Osim pokretanja programa shell može da koristi izlaz jedne komande kao ulaz druge, to se naziva piping (prvo uveden u UNIX-u). Takođe može da se koristi i kao programski jezik pri pisanju shell skripti.
 \subsubsection{Shell-ovi sa podrškom za Linux}
 \begin{itemize}
 \item bash - najpopularniji i standard za većinu distribucija, brz i jednostavan. Nastao kao zamena za sh.
 \item zsh - obimniji i sporiji, najpre se koristi radi automatskog završavanja pri unosu komandi i sugestije istih.
 \item fish - sličan zsh-u, jednostavniji za konfiguraciju ali nije POSIX (neke osnovne komande se razlikuju od većine drugih shell-ova)
 \item sh - UNIX shell
-\item dash - minimalan i efikasan, nastao da pokreće POSIX skripte isključivo. 4 puta brži od bash-a, ali nije pravljen za direktno korišćene iako se u suštini može koristiti.
+\item dash - minimalan i efikasan, nastao da pokreće POSIX skripte isključivo. 4 puta brži od bash-a, ali nije pravljen za direktno korišćene u terminalu.
 \end{itemize}
 
 \subsection{Display server}
 Displej server služi da omogući prikaz GUI-a korisnicima koristeći WIMP (prozori, ikonice, meniji, pokazivač kursora) paradigmu za korisnički interfejs. Svaka aplikacija dobija svoj prozor izmenljive veličine, najčešce pravougaonog oblika.
 \subsubsection{Display serveri sa podrškom za Linux}
 \begin{itemize}
-\item X, X11 ili XOrg - prvi i najkorišćeniji displej server za UNIX-oidne sisteme. Nastao pre više od 30 godina i još uvek u upotrebi zvog spore adopcije drugih protokola. Zahteva dodatan kompozitor (eng. compositor) za bilo kakve efekte (npr. providnost prozora) i VSync.
-\item Wayland - nastao u cilju da bude moderna alternativa za X pre više od 10 godina, ali je tek u proteklih par godina počeo eksponencionalno da se razvija i danas je standard na svega par distribucija (Fedora, Ubuntu, openSUSE, Debian). Drastično povećava bezbednost time što dodaje kontrolu dozvola aplikacijama, za razliku od X gde svaka aplikacija može da vidi i čita informacije svakog drugog prozora tj. aplikacije. Takođe svaka primena Wayland protokola je takođe i sama svoj kompozitor.
+\item X, X11 ili XOrg - prvi i najkorišćeniji displej server za UNIX-oidne sisteme. Nastao pre više od 30 godina i još uvek u upotrebi zbog spore adopcije drugih protokola. Zahteva dodatan kompozitor (eng. compositor) za bilo kakve efekte (npr. providnost prozora) i VSync.
+\item Wayland - nastao u cilju da bude moderna alternativa za X pre više od 10 godina, ali je tek u proteklih par godina počeo eksponencionalno da se razvija i danas je standard na samo par distribucija (Fedora, Ubuntu, openSUSE, Debian). Drastično povećava bezbednost time što dodaje kontrolu dozvola aplikacijama, za razliku od X gde svaka aplikacija može da vidi jedna drugu. Wayland nema dodatne kompozitore, već je svaka primena Wayland protokola sama svoj kompozitor.
 \end{itemize}
 \newpage
 
 \section{Komande}
-Jedna od velikih prednosti Linux operativnog sistema jeste terminal. Ceo operativni sistem je potpuno upotrebljiv koristeći samo njega, a tek je dodatno ubačena podrška za grafički korisnički interfejs.
+Jedna od velikih prednosti Linux operativnog sistema jeste terminal. Ceo operativni sistem je potpuno upotrebljiv koristeći samo njega, a tek je naknadno ubačena podrška za grafički korisnički interfejs.
 \subsection{Osnovne komande u Linux terminalu}
 \begin{itemize}
 \item pwd - ispisuje trenutni direktorijum u kom se nalazi, u istom će se izvršavati sve komande. Standard kad se otvori nova instanca terminala jeste kućni (eng. home) folder korisnika koji ga pokreće.
 \item ls - ispisuje sve foldere i fajlove u zadatom direktorijumu, ako želimo da vidimo i skrivene foldere i fajlove (sa prefiksom .) koristićemo \textbf{ls -a}.
-\item cd - menja lokaciju tj. folder u kom se nalazimo, samim tim će se promeniti i budući ispis pwd komande
-\item mv - pomera fajl sa jedne lokacije na drugu
-\item cp - kopira fajl sa jedne lokacije na drugu
-\item mkdir i rmdir - pravljene i brisanje foldera
-\item touch i rm - pravljenje i brisanje fajlova
-\item cat - ispis svega što se nalazi unutar fajla
-\item man - ispisuje uputsva jedne komande, tj. kako se koristi ta komanda
-\item sudo - \textbf{S}uper \textbf{U}ser \textbf{DO} - pokreće komandu kao administrator tj. root korisnik
+\item cd - menja lokaciju tj. folder u kom se nalazimo.
+\item mv - pomera fajl sa jedne lokacije na drugu.
+\item cp - kopira fajl sa jedne lokacije na drugu.
+\item mkdir i rmdir - pravljene i brisanje foldera.
+\item touch i rm - pravljenje i brisanje fajlova.
+\item cat - ispis svega što se nalazi unutar fajla.
+\item man - ispisuje uputsva jedne komande, tj. kako se koristi ta komanda.
+\item sudo - \textbf{S}uper \textbf{U}ser \textbf{DO} - pokreće komandu kao root korisnik.
 \end{itemize}
 \newpage
 
 \section{Hijerarhija sistema datoteka}
-Na Linux operativnom sistemu sve je fajl, jezgra procesora su fajlovi, sistemski diskovi su fajlovi, čak je i tastatura i miš fajl. Hijerarhija sistema datoteka (eng. FSH) definiše strukturu foldera. Sve se nalazi unutar glavnog root foldera, pristupa mu se kosom crtom, /. Iz root foldera sve proizilazi:
+Na Linux operativnom sistemu sve je predstavljeno kao fajl. Jezgra procesora su fajlovi, sistemski diskovi su fajlovi, čak je i tastatura i miš fajl. Hijerarhija sistema datoteka (eng. FSH) definiše strukturu foldera. Sve se nalazi unutar glavnog root foldera i pristupa mu se kosom crtom.
+\subsection{Glavni direktorijumi Linux sistema datoteka}
 \begin{itemize}
 \item bin - neophodni programi za dizanje sistema, npr. mount, ls, cp.
 \item boot - neophodni fajlovi za pokretanje sistema, npr. kernel, initramfs, mikrokod procesora.
@@ -270,11 +271,11 @@ Linux operativni sistem za svaki objekat, tj. fajl ili folder, ima određene per
 Dozvole nekog fajla ili foldera se menjaju komandom \textbf{chmod} a vlasništvo komandom \textbf{chown vlasnik:grupa}.
 
 \section{Okruženja radne površine}
-Okruženja radne površine su skupovi programa koji omogućavaju korišćenje grafičkog interfejsa. Čine ih razne komponente kao što su menadžer prijava, zaključavajući ekran, tekstualni editor i najvažnije menadžer prozora. U suštini je moguće imati samo menadžer prozora i zasebno skidati sve druge potrebne programe da korišćenje grafičkog korisnikog interfejsa ali korišćenjem kompletnog okruženja pojednostavljuje taj proces drastično.
+Okruženja radne površine su skupovi programa koji omogućavaju korišćenje grafičkog interfejsa. Čine ih razne komponente kao što su menadžer prijava, zaključavajući ekran, tekstualni editor i najvažnije menadžer prozora. Moguće imati samo menadžer prozora i zasebno skidati sve druge potrebne programe za korišćenje grafičkog interfejsa ali korišćenje kompletnog okruženja pojednostavljuje taj proces drastično.
 \subsection{Desktop okruženja sa podrškom za Linux}
 \begin{itemize}
 \item GNOME - GNU okruženje sa podrškom za Wayland, najpopularniji izbor za distribucije. Nastao kao deo programa za GNU operativni sistem.
-\item KDE Plasma - drugo najpopularnije okruženje, takođe sa podrškom za Wayland. Nastao kao više izmenljivo okruženje koje je meri sa GNOME koji ima specifični filozofski pogled na minimalizam.
+\item KDE Plasma - drugo najpopularnije okruženje, takođe sa podrškom za Wayland. Nastao kao više izmenljivo okruženje koje je meri sa GNOME koji ima specifični filozofski pogled na način upotrebe računara.
 \item Xfce - modularno i nezahtevno okruženje.
 \item LXQt - minimalno okruženje koje koristi najmanje resursa.
 \item Cinnamon - standardno okruženje za Linux Mint, cilja da olakša prelazak sa Windows okruženja.
@@ -283,15 +284,15 @@ Okruženja radne površine su skupovi programa koji omogućavaju korišćenje gr
 \newpage
 
 \section{Kontejnerizacija}
-Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je baš Linux izbor za 99\% servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćinskim operativnim sistemom (eng. host OS) i time štede na veličini.
+Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je Linux izbor za 99\% servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćinskim operativnim sistemom (eng. host OS) i time štede na veličini.
 \subsection{Vrste kontejnerskih okruženja}
 \begin{itemize}
-\item Linux Containers (LXC) - najprostiji vid korišćenja kontejnera na Linuxu, korišćenjem cgroups iz kernela omogućeno je kreairanje više kontejnera na jednom domaćinu.
-\item Docker - komerciolizovan i besplatan softver za kreaciju kontejnera, najpopularniji na tržištu ali zahteva root permisije.
-\item Podman - RedHat-ova alternativa za docker, cilja da bude sintaksno identična ali ne zahveta root permisije za manipulaciju kontejnera.
-\item Flatpak - RedHat-ova jednostavna distribucija desktop aplikacija korišćenjem kontejnera, developeri mogu predvidljivo da prave kontejner pored sopstvene aplikacije i tako osiguravaju da će se ona identično ponašati ne zavisno od domaćinskog operativnog sistema. Takođe, pruža ogromna poboljšanja za bezbednost u vidu permisija (slično Android-u).
+\item Linux Containers (LXC) - najprostiji vid korišćenja kontejnera na Linuxu, pomoću cgroups iz kernela omogućeno je kreairanje više kontejnera na jednom domaćinu.
+\item Docker - komerciolizovan i besplatan softver za manipulaciju kontejnera. Najpopularniji na tržištu.
+\item Podman - RedHat-ova alternativa za docker, cilja da bude sintaksno identična ali ne zahveta root permisije za razliku od Docker-a.
+\item Flatpak - RedHat-ova jednostavna distribucija desktop aplikacija korišćenjem kontejnera. Developeri mogu predvidljivo da prave kontejner pored sopstvene aplikacije i tako osiguravaju da će se ona identično ponašati ne zavisno od domaćinskog operativnog sistema. Usput pruža ogromna poboljšanja za bezbednost u vidu permisija (slično Android-u).
 \item Snap - Canonical-ova distribucija aplikacija, slična flatpak-u ali trenutno mnogo sporija i serverska strana im je centralizovana i zatvorenog koda.
-\item Appimage - Cilja da olakša distribuciju aplikacije kao flatpak i snap, ali nema jedno mesto na kom se traže aplikacije već developeri je sami daju nalik običnim pokretljivim datotekama (.exe, .deb, .rpm). Svaka aplikacija dolazi uz svoj skup biblioteka i programa potpuno izolovanih, što bespotrebno troši memoriju ali je lakše za održavanje.
+\item Appimage - cilja da olakša distribuciju aplikacije kao flatpak i snap, ali nema jedno mesto na kom se traže aplikacije već developeri sami prave i distribuiraju nalik običnim pokretljivim datotekama (.exe, .deb, .rpm). Svaka aplikacija dolazi uz svoj skup biblioteka i programa potpuno izolovanih, što bespotrebno troši memoriju ali je lakše za održavanje.
 \end{itemize}
 \newpage
 
