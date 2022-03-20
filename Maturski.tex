@@ -79,12 +79,12 @@ U ovom radu analiziraću osnovne komponente jednog izuzetnog operativnog sistema
 \rhead{Aleksa Siriški, IV-6}
 \cfoot{\thepage}
 
-\section{Istorija}
-1960. godine, MIT u saradnji sa drugim kompanijama napravili su eksperimentalni operativni sistem zvan Multics (Multiplexed Information and Computing Service). Unics (danas UNIX) su kasnije stvorili i objavili Ken Thompson i Dennis Ritchie  (Slika a) iz AT\&T 1970. godine kao sopstvenu verziju Multics-a. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je poput Linuxa i dan danas u upotrebi.
+\section{Istorija\cite{revos}}
+MIT u saradnji sa drugim kompanijama su napravili eksperimentalni operativni sistem zvan Multiplexed Information and Computing Service (Multics) 1960. godine. Unics (danas UNIX) su kasnije stvorili i objavili Ken Thompson i Dennis Ritchie  (Slika a) iz AT\&T 1970. godine kao sopstvenu verziju Multics-a. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je poput Linuxa i dan danas u upotrebi.
 \\\\
-Richard Matthew Stallman (Slika b), osnivač GNU projekta, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena  bila da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
+Richard Matthew Stallman (Slika b), osnivač GNU projekta\cite{gnu}, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena  bila da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
 \\\\
-Linus Torvalds (Slika c) koji je bio isprovociran nedostatkom kernela za potpuno slobodan i otvoren operativni sistem odlučuje da napiše svoj sopstveni. Već je bio upućen u Minix i GNU softver te je tokom studija u Finskoj započeo projekat nazvan "Linux" (Slika d). U početku je jedini radio na njemu, ali do danas se priključilo preko 15000 programera u kreiranju kernela koji se sastoji iz vise od 17 miliona linija koda.
+Linus Torvalds (Slika c) koji je bio isprovociran nedostatkom kernela za potpuno slobodan i otvoren operativni sistem odlučuje da napiše svoj sopstveni. Već je bio upućen u Minix i GNU softver te je tokom studija u Finskoj započeo projekat nazvan "Linux" (Slika d). U početku je jedini radio na njemu, ali do danas se priključilo preko 15000 programera u kreiranju kernela koji se sastoji iz vise od 17 miliona linija koda\cite{linuxfoundation}.
 \\\\
 \begin{figure}[h]
 	\centering
@@ -132,9 +132,9 @@ Takođe postoje minimalne distribucije pravljene za kontejnere:
 
 \section{Komponente}
 \subsection{Kernel}
-Kernel je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku komponentu koja je potrebna za korišćenje OS-a kao i da dozvoli komunikaciju softvera sa hardverom, ili jednog softvera sa drugim. Kernel je neophodan da bi operativni sistem funkcionisao i kao takav je ključno da je minimalan i efikasan.
+Kernel\cite{kernel} je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku komponentu koja je potrebna za korišćenje OS-a kao i da dozvoli komunikaciju softvera sa hardverom, ili jednog softvera sa drugim. Kernel je neophodan da bi operativni sistem funkcionisao i kao takav je ključno da je minimalan i efikasan.
 
-\subsubsection{Kategorije kernela}
+\subsubsection{Kategorije kernela\cite{kernelcats}}
 \begin{itemize}
 \item Monolitski - ovde se nalaze svi servisi operativnog sistema se nalaze i izvršavaju se u prostoru samog kernela (eng. \textit{kernel space}). Ima zavisnosti (eng. \textit{dependencies} ) između sistemskih komponenti i ogromne količine linija koda što ga čini veoma kompleksnim.
 \begin{itemize}
@@ -163,7 +163,7 @@ Kernel je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku ko
 \end{itemize}
 \newpage
 
-\subsubsection{Osnovni delovi Linux kernela}
+\subsubsection{Osnovni delovi Linux kernela\cite{devibm}}
 \begin{itemize}
 \item Menadžer procesa - kao što mu ime implicira, služi da rukuje procesima tj. programima. Svaki proces je zapravo svoj virtualni procesor, nazvan nit (eng. \textit{thread}). Programi mogu alocirati više niti, takozvanih "radnika" (eng. \textit{workers}). Termin "proces" i "nit" su istog značenja, mada je "proces" više popularan u Desktop aplikacijama.
 \item Menadžer memorije - memorija u Linuxu je programima predstavljena kao gomila stranica koje su potom multiplicirane i dodeljivane po zahtevu tog programa. Standard su stranice od 4KB. Takođe, stranice je moguće prebaciti sa sistemske RAM memorije na hard disk, takav postupak se naziva \textit{swapping}.
@@ -183,7 +183,7 @@ Bootloader je program koji se pokreće pre samog operativnog sistema. Omogućava
 \end{itemize}
 
 \subsection{Daemons}
-Demoni, naziv nastao od Maxwell-ovog demona koji u pozadini sortira molekule, služe da rade baš to: u pozadini postoje bez korisničkog interfejsa i čekaju na neki događaj (eng. event) i/ili da nude usluge (eng. services).
+Demoni\cite{daemon}, naziv nastao od Maxwell-ovog demona koji u pozadini sortira molekule, služe da rade baš to: u pozadini postoje bez korisničkog interfejsa i čekaju na neki događaj (eng. event) i/ili da nude usluge (eng. services).
 
 \subsection{initramfs}
 Init je prvi program koji se pokreće nakon kernela, automatski postaje roditelj svakog narednog programa i poslednji se zaustavlja pri gašenju računara. Kao takav, služi da omogući pristup sistemima datoteka (eng. mount filesystems), da reguliše demone i snabdeva informacije o njima.
@@ -272,12 +272,12 @@ Dozvole nekog fajla ili foldera se menjaju komandom \textbf{chmod} a vlasništvo
 Okruženja radne površine su skupovi programa koji omogućavaju korišćenje grafičkog interfejsa. Čine ih razne komponente kao što su menadžer prijava, zaključavajući ekran, tekstualni editor i najvažnije menadžer prozora. Moguće imati samo menadžer prozora i zasebno skidati sve druge potrebne programe za korišćenje grafičkog interfejsa ali korišćenje kompletnog okruženja drastično pojednostavljuje taj proces.
 \subsection{Desktop okruženja sa podrškom za Linux}
 \begin{itemize}
-\item GNOME - GNU okruženje sa podrškom za Wayland, najpopularniji izbor za distribucije. Nastao kao deo programa za GNU operativni sistem.
-\item KDE Plasma - drugo najpopularnije okruženje, takođe sa podrškom za Wayland. Nastao kao više izmenljivo okruženje koje je meri sa GNOME koji ima specifični filozofski pogled na način upotrebe računara.
-\item Xfce - modularno i nezahtevno okruženje.
-\item LXQt - okruženje koje koristi najmanje resursa.
-\item Cinnamon - standardno okruženje za Linux Mint, nastoji da olakša prelazak sa Windows okruženja.
-\item MATE - započet kao klon GNOME 2 kada je GNOME prešao na verziju 3, ali sada i sam koristi tu verziju.
+\item GNOME\cite{gnome} - GNU okruženje sa podrškom za Wayland, najpopularniji izbor za distribucije. Nastao kao deo programa za GNU operativni sistem.
+\item KDE Plasma\cite{kdeplasma}  - drugo najpopularnije okruženje, takođe sa podrškom za Wayland. Nastao kao više izmenljivo okruženje koje je meri sa GNOME koji ima specifični filozofski pogled na način upotrebe računara.
+\item Xfce\cite{xfce} - modularno i nezahtevno okruženje.
+\item LXQt\cite{lxqt} - okruženje koje koristi najmanje resursa.
+\item MATE\cite{mate} - započet kao klon GNOME 2 kada je GNOME prešao na verziju 3, ali sada i sam koristi tu verziju.
+\item Cinnamon\cite{cinnamon} - standardno okruženje za Linux Mint, nastoji da olakša prelazak sa Windows okruženja.
 \end{itemize}
 \newpage
 
@@ -285,28 +285,22 @@ Okruženja radne površine su skupovi programa koji omogućavaju korišćenje gr
 Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je Linux izbor za 99\% servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćim operativnim sistemom (eng. host OS) i time štede na veličini.
 \subsection{Vrste kontejnerskih okruženja}
 \begin{itemize}
-\item Linux Containers (LXC) - najprostiji vid korišćenja kontejnera na Linuxu, pomoću cgroups iz kernela omogućeno je kreiranje više kontejnera na jednom domaćinu.
-\item Docker - komercijalizovan i besplatan softver za manipulaciju kontejnera. Najpopularniji na tržištu.
-\item Podman - RedHat-ova alternativa za docker, nastoji da bude sintaksno identična ali ne zahveta root dozvole za razliku od Docker-a.
-\item Flatpak - RedHat-ova jednostavna distribucija desktop aplikacija korišćenjem kontejnera. Developeri mogu predvidljivo da prave kontejner pored sopstvene aplikacije i tako osiguravaju da će se ona identično ponašati ne zavisno od domaćinskog operativnog sistema. Usput pruža ogromna poboljšanja za bezbednost u vidu dozvola (slično Android-u).
-\item Snap - Canonical-ova distribucija aplikacija, slična flatpak-u ali trenutno mnogo sporija. Serverska strana im je centralizovana i zatvorenog koda.
-\item Appimage - nastoji da olakša distribuciju aplikacije kao flatpak i snap, ali nema jedno mesto na kom se traže aplikacije, već developeri sami prave i distribuiraju nalik običnim pokretljivim datotekama (.exe, .deb, .rpm). Svaka aplikacija dolazi uz svoj skup biblioteka i programa potpuno izolovanih, što bespotrebno troši memoriju, ali je lakše za održavanje.
+\item Linux kontejneri\cite{lxc} - najprostiji vid korišćenja kontejnera na Linuxu, pomoću cgroups iz kernela omogućeno je kreiranje više kontejnera na jednom domaćinu.
+\item Docker\cite{docker} - komercijalizovan i besplatan softver za manipulaciju kontejnera. Najpopularniji na tržištu.
+\item Podman\cite{podman} - RedHat-ova alternativa za docker, nastoji da bude sintaksno identična ali ne zahveta root dozvole za razliku od Docker-a.
+\item Flatpak\cite{flatpak} - RedHat-ova jednostavna distribucija desktop aplikacija korišćenjem kontejnera. Developeri mogu predvidljivo da prave kontejner pored sopstvene aplikacije i tako osiguravaju da će se ona identično ponašati ne zavisno od domaćinskog operativnog sistema. Usput pruža ogromna poboljšanja za bezbednost u vidu dozvola (slično Android-u).
+\item Snap\cite{snap} - Canonical-ova distribucija aplikacija, slična flatpak-u ali trenutno mnogo sporija. Serverska strana im je centralizovana i zatvorenog koda.
+\item AppImage\cite{appimage} - nastoji da olakša distribuciju aplikacije kao flatpak i snap, ali nema jedno mesto na kom se traže aplikacije, već developeri sami prave i distribuiraju nalik običnim pokretljivim datotekama (.exe, .deb, .rpm). Svaka aplikacija dolazi uz svoj skup biblioteka i programa potpuno izolovanih, što bespotrebno troši memoriju, ali je lakše za održavanje.
 \end{itemize}
 \newpage
 
 \section{Zaključak}
 \newpage
 
-\section{Literatura}
-\href{http://www.linfo.org}{http://www.linfo.org}
-\\
-\href{https://tldp.org}{https://tldp.org}
-\\
-\href{https://www.redhat.com}{https://www.redhat.com}
-\\
-\href{https://wiki.archlinux.org}{https://wiki.archlinux.org}
-\\
-\href{https://developer.ibm.com/articles/l-linux-kernel}{https://developer.ibm.com/articles/l-linux-kernel}
+\renewcommand\refname{Literatura}
+\bibliographystyle{unsrt}
+\addcontentsline{toc}{section}{Literatura}
+\bibliography{literatura}
 \newpage
 
 \section{BIOGRAFIJA MATURANTA}
@@ -314,7 +308,7 @@ Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost
 \centering
 \includegraphics[width=.90\linewidth]{Maturska}
 \end{wrapfigure}
-Aleksa Siriški rođen je 10. jula 2003. godine u Novom Sadu. Pohađao je Osnovnu školu „Svetozar Marković Toza“ do šestog razreda. Tamo stiče interesovanje za matematiku, fiziku, informatiku i jezike. Septembra 2016. upisuje Osnovnu školu pri Gimnaziji „Jovan Jovanović Zmaj“, kako bi intenzivnije radio u oblastima matematike, fizike i informatike. Istovremeno pohađa programerski kurs „Centar za mlade talente“. Školovanje nastavlja u istoj gimnaziji i opredeljuje se za smer „Učenici sa posebnim sposobnostima za računarstvo i informatiku“. Naredne četiri godine, uporedo sa školom, pohađa i kurseve engleskog i nemačkog jezika. Planira da više obrazovanje stekne na Prirodno matematičkom fakultetu, smer Informacione tehnologije.
+Aleksa Siriški rođen je 10. jula 2003. godine u Novom Sadu. Pohađao je Osnovnu školu „Svetozar Marković Toza“ do šestog razreda. Tamo stiče interesovanje za matematiku, informatiku, fiziku i jezike. Septembra 2016. upisuje Osnovnu školu pri Gimnaziji „Jovan Jovanović Zmaj“, kako bi intenzivnije radio u oblastima matematike, fizike i informatike. Istovremeno pohađa programerski kurs „Centar za mlade talente“. Školovanje nastavlja u istoj gimnaziji i opredeljuje se za smer „Učenici sa posebnim sposobnostima za računarstvo i informatiku“. Naredne četiri godine, uporedo sa školom, pohađa i kurseve engleskog i nemačkog jezika. Planira da više obrazovanje stekne na Prirodno matematičkom fakultetu, smer Informacione tehnologije.
 \newpage
 
 \end{document}
