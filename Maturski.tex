@@ -66,7 +66,7 @@ Novi Sad, maj 2022. god.
 \section{Predgovor}
 Za ovu temu sam se opredelio iz više razloga. Prvenstveno zbog ljubavi prema informacionim tehnologijama, koju sam stekao zahvaljujući mojim roditeljima. Drugi razlog je to što smatram da je ovo veoma fascinantna tema, jer obuhvata kompleksnost koje se može postići kada na jednom projektu radi čitav svet. Na kraju, ono što me je privuklo da izaberem baš ovu temu, jeste činjenica da je budućnost IT-a slobodan i besplatan kod.
 \\\\
-U ovom radu, analiziraću osnovne komponente jednog izuzetnog operativnog sistema, istoriju njegove kreacije kao i filozofski pogled na isti.
+U ovom radu analiziraću osnovne komponente jednog izuzetnog operativnog sistema, istoriju njegove kreacije kao i filozofski pogled na isti.
 \newpage
 
 \renewcommand{\contentsname}{Sadržaj}
@@ -80,11 +80,11 @@ U ovom radu, analiziraću osnovne komponente jednog izuzetnog operativnog sistem
 \cfoot{\thepage}
 
 \section{Istorija}
-1960. godine, MIT u saradnji sa drugim kompanijama su napravili eksperimentalni operativni sistem zvan Multics (Multiplexed Information and Computing Service). Unics (danas UNIX) su kasnije stvorili i objavili Ken Thompson i Dennis Ritchie  (Slika a) iz AT\&T 1970. godine kao sopstvenu verziju Multics-a. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je poput Linuxa i dan danas u upotrebi.
+1960. godine, MIT u saradnji sa drugim kompanijama napravili su eksperimentalni operativni sistem zvan Multics (Multiplexed Information and Computing Service). Unics (danas UNIX) su kasnije stvorili i objavili Ken Thompson i Dennis Ritchie  (Slika a) iz AT\&T 1970. godine kao sopstvenu verziju Multics-a. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je poput Linuxa i dan danas u upotrebi.
 \\\\
-Richard Matthew Stallman (Slika b), osnivač GNU projekta, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
+Richard Matthew Stallman (Slika b), osnivač GNU projekta, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena  bila da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
 \\\\
-Linus Torvalds (Slika c) koji je bio iznerviran nedostatkom kernela za potpuno slobodan i otvoren operativni sistem odlučuje da napiše svoj sopstveni. Već je bio upućen u Minix i GNU softver te je tokom studija u Finskoj započeo projekat nazvan "Linux" (Slika d). U početku je jedini radio na njemu, ali do danas se priključilo preko 15000 programera u kreiranju kernela koji se sastoji iz vise od 17 miliona linija koda.
+Linus Torvalds (Slika c) koji je bio isprovociran nedostatkom kernela za potpuno slobodan i otvoren operativni sistem odlučuje da napiše svoj sopstveni. Već je bio upućen u Minix i GNU softver te je tokom studija u Finskoj započeo projekat nazvan "Linux" (Slika d). U početku je jedini radio na njemu, ali do danas se priključilo preko 15000 programera u kreiranju kernela koji se sastoji iz vise od 17 miliona linija koda.
 \\\\
 \begin{figure}[h]
 	\centering
@@ -99,25 +99,25 @@ Linus Torvalds (Slika c) koji je bio iznerviran nedostatkom kernela za potpuno s
 \newpage
 
 \section{Distribucije}
-GNU/Linux operativni sistem se može samostalno napraviti od nule, kompajliranjem svih potrebnih programa (npr. Linux From Scratch), ali se najčešće koriste već gotove distribucije. Sve distribucije dele jednu stvar, Linux kernel, ali po svemu drugom se mogu potpuno razlikovati, doduše većina distribucija ima neke zajedničke osnovne komponente.
+GNU/Linux operativni sistem se može samostalno napraviti kompajliranjem svih potrebnih programa (npr. Linux From Scratch), ali se najčešće koriste već gotove distribucije. Sve distribucije dele jednu stvar, Linux kernel, ali po svemu ostalom se mogu potpuno razlikovati, doduše većina distribucija ima neke zajedničke osnovne komponente.
 \\\\
 Postoje distribucije pravljene za servere:
 \begin{itemize}
-\item Debian
+\item Debian (Slika a)
 \item Ubuntu server
 \item CentOS
 \item Turnkey
 \end{itemize}
 Kao i distribucije pravljene za desktop korisnike:
 \begin{itemize}
-\item Ubuntu
+\item Ubuntu (Slika b)
 \item Linux Mint
 \item PopOS
-\item Fedora Workstation
+\item Fedora Workstation (Slika c)
 \end{itemize}
 Takođe postoje minimalne distribucije pravljene za kontejnere:
 \begin{itemize}
-\item Alpine Linux
+\item Alpine Linux (Slika d)
 \item Fedora CoreOS
 \item openSUSE MicroOS
 \end{itemize}
@@ -126,7 +126,7 @@ Takođe postoje minimalne distribucije pravljene za kontejnere:
     \subfloat[Debian]{{\includegraphics[height=3cm,width=3cm]{debian} }}
     \subfloat[Ubuntu]{{\includegraphics[height=3cm,width=3cm]{ubuntu} }}
     \subfloat[Fedora]{{\includegraphics[height=3cm,width=3cm]{fedora} }}
-    \subfloat[Arch]{{\includegraphics[height=3cm,width=3cm]{arch} }}
+    \subfloat[Alpine]{{\includegraphics[height=3cm,width=3cm]{alpine} }}
 \end{figure}
 \newpage
 
@@ -136,14 +136,14 @@ Kernel je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku ko
 
 \subsubsection{Kategorije kernela}
 \begin{itemize}
-\item Monolitski - svi servisi operativnog sistema se nalaze u njemu i izvršavaju se u prostoru samog kernela (eng. kernel space). Ima zavisnosti (eng. dependencies) između sistemskih komponenti i ogromne količine linija koda što ga čini veoma kompleksnim.
+\item Monolitski - ovde se nalaze svi servisi operativnog sistema se nalaze i izvršavaju se u prostoru samog kernela (eng. \textit{kernel space}). Ima zavisnosti (eng. \textit{dependencies} ) između sistemskih komponenti i ogromne količine linija koda što ga čini veoma kompleksnim.
 \begin{itemize}
 \item Unix
 \item Linux
 \item Open VMS
 \item XTS-400
 \end{itemize}
-\item Microkernel - minimalistički, ima virtualnu memoriju i raspoređivanje niti (eng. thread scheduling). Samim tim što je manji je i stabilniji, ali zato ima mnogo više sistemskih poziva jer stavlja sve druge procese u korisnički prostor (eng. user space).
+\item Mikrokernel - minimalistički, ima virtualnu memoriju i raspoređivanje niti (eng. \textit{thread scheduling}). Samim tim što je manji je i stabilniji, ali zato ima mnogo više sistemskih poziva jer stavlja sve druge procese u korisnički prostor (eng. \textit{user space}).
 \begin{itemize}
 \item GNU Hurd
 \item Mach (MacOS)
@@ -152,32 +152,32 @@ Kernel je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku ko
 \item Minix
 \item K42
 \end{itemize}
-\item Hibridni - mešavina monolitskog i micro kernela. Ima brzinu i dizajn monolitskog ali modularnost i stabilnost microkernela.
+\item Hibridni - mešavina monolitskog i mikro kernela. Ima brzinu i dizajn monolitskog ali modularnost i stabilnost mikrokernela.
 \begin{itemize}
 \item Windows NT
 \item Netware
 \item BeOS
 \end{itemize}
-\item Exokernel - prati end-to-end princip, ima najmanju apstrakciju hardvera i direktno dodeljuje fizičke resurse aplikacijama.
-\item Nanokernel - samo apstrakcija hardvera, bez sistemskih servisa. Veoma sličan microkernelu.
+\item Egzokernel - prati end-to-end princip, ima najmanju apstrakciju hardvera i direktno dodeljuje fizičke resurse aplikacijama.
+\item Nanokernel - samo apstrakcija hardvera, bez sistemskih servisa. Veoma sličan mikrokernelu.
 \end{itemize}
 \newpage
 
 \subsubsection{Osnovni delovi Linux kernela}
 \begin{itemize}
-\item Menadžer procesa - kao što mu ime implicira služi da rukuje procesima tj. programima. Svaki proces je zapravo svoj virtualni procesor, nazvan nit (eng. thread). Programi mogu alocirati više niti, zvani radnici (eng. workers). Termin proces i nit su istog značenja, mada je proces više popularan u Desktop aplikacijama.
-\item Menadžer memorije - memorija u Linuxu je programima predstavljena kao gomila stranica (eng. pages) koje su potom multiplicirane i dodeljivane po zahtevu tog programa. Standard su stranice od 4KB. Takođe, stranice je moguće prebaciti sa sistemske RAM memorije na hard disk, takav postupak se naziva swapping.
+\item Menadžer procesa - kao što mu ime implicira, služi da rukuje procesima tj. programima. Svaki proces je zapravo svoj virtualni procesor, nazvan nit (eng. \textit{thread}). Programi mogu alocirati više niti, takozvanih "radnika" (eng. \textit{workers}). Termin "proces" i "nit" su istog značenja, mada je "proces" više popularan u Desktop aplikacijama.
+\item Menadžer memorije - memorija u Linuxu je programima predstavljena kao gomila stranica koje su potom multiplicirane i dodeljivane po zahtevu tog programa. Standard su stranice od 4KB. Takođe, stranice je moguće prebaciti sa sistemske RAM memorije na hard disk, takav postupak se naziva \textit{swapping}.
 \item Drajveri - kod koji čini najveći deo linux kernela, omogućava korišćenje određenog hardvera.
-\item Virtualni sistem datoteka (eng. VFS) - apstraktuje osnovne komande za manipulaciju podataka čime omogućava korišćenje raznovrsnih sistema datoteka (eng. filesystems).
+\item Virtualni sistem datoteka (VFS) - apstraktuje osnovne komande za manipulaciju podataka čime omogućava korišćenje raznovrsnih sistema datoteka.
 \end{itemize}
 \newpage
 
 \subsection{Bootloader}
-Bootloader je program koji se pokreće pre samog operativnog sistema. Omogućava izbor između više operativnih sistema (dual boot), kao i izbor između različitih kernela na istom operativnom sistemu. Najpre se pokreće kernel, zatim mikrokod procesora (npr. intel-ucode, amd-ucode) i na kraju inicijalni memorijski disk (\textbf{init}ial \textbf{ram} \textbf{f}ile\textbf{s}ystem). Takođe, u bootloader-u se definišu dodatne i zamenite (eng. override) opcije za kernel.
+Bootloader je program koji se pokreće pre samog operativnog sistema. Omogućava izbor između više operativnih sistema (dual boot), kao i izbor između različitih kernela na istom operativnom sistemu. Najpre se pokreće kernel, zatim mikrokod procesora (npr. intel-ucode, amd-ucode) i na kraju inicijalni memorijski disk (\textbf{init}ial \textbf{ram} \textbf{f}ile\textbf{s}ystem). Takođe, u bootloader-u se definišu dodatne i zamenjive opcije za kernel.
 \subsubsection{Bootloader-i sa podrškom za Linux}
 \begin{itemize}
 \item \textbf{GR}and \textbf{U}nified \textbf{B}ootloader - najpopularniji zbog velike podrške za svakakve sisteme, jedini podržava enkriptovanu boot particiju. Nastao kao deo programa za GNU operativni sistem.
-\item rEFInd - cilja da ima što više opcija kao GRUB ali sa manjim i jednostavnijim konfiguracijama.
+\item rEFInd - nastoji da ima što više opcija kao GRUB ali sa manjim i jednostavnijim konfiguracijama.
 \item systemd-boot - deo systemd, veoma jednostavan i minimalan.
 \item EFISTUB - metoda umetanja Linux kernela kao samostalnog bootloadera u novije UEFI BIOS sisteme.
 \end{itemize}
@@ -186,10 +186,10 @@ Bootloader je program koji se pokreće pre samog operativnog sistema. Omogućava
 Demoni, naziv nastao od Maxwell-ovog demona koji u pozadini sortira molekule, služe da rade baš to: u pozadini postoje bez korisničkog interfejsa i čekaju na neki događaj (eng. event) i/ili da nude usluge (eng. services).
 
 \subsection{initramfs}
-Init je prvi program koji se pokreće nakon kernela, automatski postaje roditelj (eng. parent) svakog narednog programa i poslednji se zaustavlja pri gašenju računara. Kao takav, služi da omogući pristup sistemima datoteka (eng. mount filesystems), da reguliše demone i snabdeva informacije o njima.
+Init je prvi program koji se pokreće nakon kernela, automatski postaje roditelj svakog narednog programa i poslednji se zaustavlja pri gašenju računara. Kao takav, služi da omogući pristup sistemima datoteka (eng. mount filesystems), da reguliše demone i snabdeva informacije o njima.
 \subsubsection{Init sistemi sa podrškom za Linux}
 \begin{itemize}
-\item systemd - najpopularniji ali i najobimniji, ne prati KISS (keep it simple, stupid) jer integriše mnogobrojne dodatne funkcionalnosti kojim init sistem ne bi trebao da se bavi.
+\item systemd - najpopularniji ali i najobimniji, ne prati KISS (\textit{keep it simple, stupid}) jer integriše mnogobrojne dodatne funkcionalnosti kojim init sistem ne bi trebao da se bavi.
 \item OpenRC - prvi izbor za one koje ne vole systemd, minimalan i brz.
 \item GNU Shepherd - Nastao kao deo programa za GNU operativni sistem.
 \item BusyBox - nastao za korišćenje na ugrađenim slabim uređajima (eng. embedded devices).
@@ -199,14 +199,14 @@ Init je prvi program koji se pokreće nakon kernela, automatski postaje roditelj
 \newpage
 
 \subsection{Shell}
-Shell služi da korisniku pruži isključivo tekstualni interfejs, naziv ljuska upućuje da je to spoljni deo operativnog sistema. Korisnik unosi komande i dobija odgovore. Osim pokretanja programa shell može da koristi izlaz jedne komande kao ulaz druge, to se naziva piping (prvo uveden u UNIX-u). Takođe može da se koristi i kao programski jezik pri pisanju shell skripti.
+Shell (eng. \textit{ljuska}) služi da korisniku pruži isključivo tekstualni interfejs, naziv "ljuska" upućuje da je to spoljni deo operativnog sistema. Korisnik unosi komande i dobija odgovore. Osim pokretanja programa, shell može da koristi izlaz jedne komande kao ulaz druge, što se naziva \textit{piping} (prvo uveden u UNIX-u). Takođe može da se koristi i kao programski jezik pri pisanju shell skripti.
 \subsubsection{Shell-ovi sa podrškom za Linux}
 \begin{itemize}
 \item bash - najpopularniji i standard za većinu distribucija, brz i jednostavan. Nastao kao zamena za sh.
 \item zsh - obimniji i sporiji, najpre se koristi radi automatskog završavanja pri unosu komandi i sugestije istih.
 \item fish - sličan zsh-u, jednostavniji za konfiguraciju ali nije POSIX (neke osnovne komande se razlikuju od većine drugih shell-ova)
 \item sh - UNIX shell
-\item dash - minimalan i efikasan, nastao da pokreće POSIX skripte isključivo. 4 puta brži od bash-a, ali nije pravljen za direktno korišćene u terminalu.
+\item dash - minimalan i efikasan, nastao isključivo da pokreće POSIX skripte. Četiri puta brži od bash-a, ali nije pravljen za direktno korišćenje u terminalu.
 \end{itemize}
 
 \subsection{Display server}
@@ -219,43 +219,43 @@ Displej server služi da omogući prikaz GUI-a korisnicima koristeći WIMP (proz
 \newpage
 
 \section{Komande}
-Jedna od velikih prednosti Linux operativnog sistema jeste terminal. Ceo operativni sistem je potpuno upotrebljiv koristeći samo njega, a tek je naknadno ubačena podrška za grafički korisnički interfejs.
+Jedna od velikih prednosti Linux operativnog sistema jeste terminal, kojim je omogućena upotreba kompletnog korisničkog interfejsa. Tek je naknadno ubačena podrška za grafički korisnički interfejs.
 \subsection{Osnovne komande u Linux terminalu}
 \begin{itemize}
-\item pwd - ispisuje trenutni direktorijum u kom se nalazi, u istom će se izvršavati sve komande. Standard kad se otvori nova instanca terminala jeste kućni (eng. home) folder korisnika koji ga pokreće.
-\item ls - ispisuje sve foldere i fajlove u zadatom direktorijumu, ako želimo da vidimo i skrivene foldere i fajlove (sa prefiksom .) koristićemo \textbf{ls -a}.
-\item cd - menja lokaciju tj. folder u kom se nalazimo.
-\item mv - pomera fajl sa jedne lokacije na drugu.
-\item cp - kopira fajl sa jedne lokacije na drugu.
+\item pwd - ispisuje trenutni direktorijum u kom se nalazi i u kom će se izvršavati sve komande. Inicijalni terminal je kućni folder korisnika koji ga pokreće.
+\item ls - ispisuje sve foldere i fajlove u zadatom direktorijumu. U slučaju skrivenih foldera i fajlova koristi se \textbf{ls -a}.
+\item cd - menja trenutnu lokaciju tj. folder.
+\item mv - pomera fajl.
+\item cp - kopira fajl.
 \item mkdir i rmdir - pravljene i brisanje foldera.
 \item touch i rm - pravljenje i brisanje fajlova.
 \item cat - ispis svega što se nalazi unutar fajla.
-\item man - ispisuje uputsva jedne komande, tj. kako se koristi ta komanda.
+\item man - ispisuje uputsva jedne komande.
 \item sudo - \textbf{S}uper \textbf{U}ser \textbf{DO} - pokreće komandu kao root korisnik.
 \end{itemize}
 \newpage
 
 \section{Hijerarhija sistema datoteka}
-Na Linux operativnom sistemu sve je predstavljeno kao fajl. Jezgra procesora su fajlovi, sistemski diskovi su fajlovi, čak je i tastatura i miš fajl. Hijerarhija sistema datoteka (eng. FSH) definiše strukturu foldera. Sve se nalazi unutar glavnog root foldera i pristupa mu se kosom crtom.
+Na Linux operativnom sistemu sve je predstavljeno kao fajl - jezgra procesora, sistemski diskovi, čak i tastatura i miš. Hijerarhija sistema datoteka (FSH) definiše strukturu foldera. Sve se nalazi unutar glavnog root foldera i pristupa mu se kosom crtom.
 \subsection{Glavni direktorijumi Linux sistema datoteka}
 \begin{itemize}
-\item bin - neophodni programi za dizanje sistema, npr. mount, ls, cp.
-\item boot - neophodni fajlovi za pokretanje sistema, npr. kernel, initramfs, mikrokod procesora.
-\item dev - uređaji predstavljeni kao fajlovi, npr. hard diskovi, procesor, grafička kartica.
+\item bin - neophodni programi za pokretanje sistema - mount, ls, cp.
+\item boot - neophodni fajlovi za pokretanje sistema - kernel, initramfs, mikrokod procesora.
+\item dev - uređaji predstavljeni kao fajlovi - hard diskovi, procesor, grafička kartica.
 \item etc - konfiguracioni fajlovi za sistemske programe.
-\item home - folderi i fajlovi svih korisnika na sistemu, jedino je root na /root.
+\item home - folderi i fajlovi svih korisnika na sistemu sa izutetkom glavnog korisnika na /root.
 \item lib - biblioteke potrebne za pokretanje programa iz /bin.
 \item media - mesto za priključne medije, npr. usb flash, CD.
 \item mnt - slično /media, namenjeno za pristup privremenim uređajima.
 \item proc - informacije o sistemskim procesima i kernelu u obliku fajlova
 \item tmp - privremeni fajlovi koji se brišu pri gašenju računara
 \item usr - primarni direktorijum za izvršavajuće programe na sistemu
-\item var - promenljivi fajlovi koji zapisiju promene i podatke tokom izvršavanja programa
+\item var - promenljivi fajlovi koji zapisuju promene i podatke tokom izvršavanja programa
 \end{itemize}
 \newpage
 
 \section{Dozvole i vlasništvo}
-Linux operativni sistem za svaki objekat, tj. fajl ili folder, ima određene permisije. Moguće ih je videti komandom \textbf{ls -l}. Postoje tri vrste dozvola: čitanje, pisanje i pokretanje. Takođe postoje tri vrste vlasništva: vlasnik, grupa i svi ostali. Na ta tri vlasnišva se određuje koje dozvole imaju, koristeći sledeće brojeve:
+Linux operativni sistem za svaki objekat, tj. fajl ili folder, ima određene dozvole. Moguće ih je videti komandom \textbf{ls -l}. Postoje tri vrste dozvola: čitanje, pisanje i pokretanje. Takođe postoje tri vrste vlasništva: vlasnik, grupa i svi ostali. Na ta tri vlasnišva se određuje koje dozvole imaju, koristeći sledeće brojeve:
 \begin{itemize}
 \item 0 - nema nikakvih dozvola
 \item 1 - dozvola za pokretanje
@@ -269,28 +269,28 @@ Linux operativni sistem za svaki objekat, tj. fajl ili folder, ima određene per
 Dozvole nekog fajla ili foldera se menjaju komandom \textbf{chmod} a vlasništvo komandom \textbf{chown vlasnik:grupa}.
 
 \section{Okruženja radne površine}
-Okruženja radne površine su skupovi programa koji omogućavaju korišćenje grafičkog interfejsa. Čine ih razne komponente kao što su menadžer prijava, zaključavajući ekran, tekstualni editor i najvažnije menadžer prozora. Moguće imati samo menadžer prozora i zasebno skidati sve druge potrebne programe za korišćenje grafičkog interfejsa ali korišćenje kompletnog okruženja pojednostavljuje taj proces drastično.
+Okruženja radne površine su skupovi programa koji omogućavaju korišćenje grafičkog interfejsa. Čine ih razne komponente kao što su menadžer prijava, zaključavajući ekran, tekstualni editor i najvažnije menadžer prozora. Moguće imati samo menadžer prozora i zasebno skidati sve druge potrebne programe za korišćenje grafičkog interfejsa ali korišćenje kompletnog okruženja drastično pojednostavljuje taj proces.
 \subsection{Desktop okruženja sa podrškom za Linux}
 \begin{itemize}
 \item GNOME - GNU okruženje sa podrškom za Wayland, najpopularniji izbor za distribucije. Nastao kao deo programa za GNU operativni sistem.
 \item KDE Plasma - drugo najpopularnije okruženje, takođe sa podrškom za Wayland. Nastao kao više izmenljivo okruženje koje je meri sa GNOME koji ima specifični filozofski pogled na način upotrebe računara.
 \item Xfce - modularno i nezahtevno okruženje.
-\item LXQt - minimalno okruženje koje koristi najmanje resursa.
-\item Cinnamon - standardno okruženje za Linux Mint, cilja da olakša prelazak sa Windows okruženja.
+\item LXQt - okruženje koje koristi najmanje resursa.
+\item Cinnamon - standardno okruženje za Linux Mint, nastoji da olakša prelazak sa Windows okruženja.
 \item MATE - započet kao klon GNOME 2 kada je GNOME prešao na verziju 3, ali sada i sam koristi tu verziju.
 \end{itemize}
 \newpage
 
 \section{Kontejnerizacija}
-Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je Linux izbor za 99\% servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćinskim operativnim sistemom (eng. host OS) i time štede na veličini.
+Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je Linux izbor za 99\% servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćim operativnim sistemom (eng. host OS) i time štede na veličini.
 \subsection{Vrste kontejnerskih okruženja}
 \begin{itemize}
-\item Linux Containers (LXC) - najprostiji vid korišćenja kontejnera na Linuxu, pomoću cgroups iz kernela omogućeno je kreairanje više kontejnera na jednom domaćinu.
-\item Docker - komerciolizovan i besplatan softver za manipulaciju kontejnera. Najpopularniji na tržištu.
-\item Podman - RedHat-ova alternativa za docker, cilja da bude sintaksno identična ali ne zahveta root permisije za razliku od Docker-a.
-\item Flatpak - RedHat-ova jednostavna distribucija desktop aplikacija korišćenjem kontejnera. Developeri mogu predvidljivo da prave kontejner pored sopstvene aplikacije i tako osiguravaju da će se ona identično ponašati ne zavisno od domaćinskog operativnog sistema. Usput pruža ogromna poboljšanja za bezbednost u vidu permisija (slično Android-u).
-\item Snap - Canonical-ova distribucija aplikacija, slična flatpak-u ali trenutno mnogo sporija i serverska strana im je centralizovana i zatvorenog koda.
-\item Appimage - cilja da olakša distribuciju aplikacije kao flatpak i snap, ali nema jedno mesto na kom se traže aplikacije već developeri sami prave i distribuiraju nalik običnim pokretljivim datotekama (.exe, .deb, .rpm). Svaka aplikacija dolazi uz svoj skup biblioteka i programa potpuno izolovanih, što bespotrebno troši memoriju ali je lakše za održavanje.
+\item Linux Containers (LXC) - najprostiji vid korišćenja kontejnera na Linuxu, pomoću cgroups iz kernela omogućeno je kreiranje više kontejnera na jednom domaćinu.
+\item Docker - komercijalizovan i besplatan softver za manipulaciju kontejnera. Najpopularniji na tržištu.
+\item Podman - RedHat-ova alternativa za docker, nastoji da bude sintaksno identična ali ne zahveta root dozvole za razliku od Docker-a.
+\item Flatpak - RedHat-ova jednostavna distribucija desktop aplikacija korišćenjem kontejnera. Developeri mogu predvidljivo da prave kontejner pored sopstvene aplikacije i tako osiguravaju da će se ona identično ponašati ne zavisno od domaćinskog operativnog sistema. Usput pruža ogromna poboljšanja za bezbednost u vidu dozvola (slično Android-u).
+\item Snap - Canonical-ova distribucija aplikacija, slična flatpak-u ali trenutno mnogo sporija. Serverska strana im je centralizovana i zatvorenog koda.
+\item Appimage - nastoji da olakša distribuciju aplikacije kao flatpak i snap, ali nema jedno mesto na kom se traže aplikacije, već developeri sami prave i distribuiraju nalik običnim pokretljivim datotekama (.exe, .deb, .rpm). Svaka aplikacija dolazi uz svoj skup biblioteka i programa potpuno izolovanih, što bespotrebno troši memoriju, ali je lakše za održavanje.
 \end{itemize}
 \newpage
 
@@ -298,21 +298,15 @@ Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost
 \newpage
 
 \section{Literatura}
-\href{http://www.linfo.org}{The Linux Information Project}
+\href{http://www.linfo.org}{http://www.linfo.org}
 \\
-\href{https://tldp.org}{The Linux Documentation Project}
+\href{https://tldp.org}{https://tldp.org}
 \\
-\href{https://www.redhat.com}{Red Hat}
+\href{https://www.redhat.com}{https://www.redhat.com}
 \\
-\href{https://wiki.archlinux.org}{Arch Wiki}
+\href{https://wiki.archlinux.org}{https://wiki.archlinux.org}
 \\
-\href{https://askubuntu.com}{Ask Ubuntu}
-\\
-\href{https://www.geeksforgeeks.org}{Geeks for Geeks}
-\\
-\href{https://unix.stackexchange.com}{Unix \& Linux Stack Exchange}
-\\
-\href{https://superuser.com}{Super User}
+\href{https://developer.ibm.com/articles/l-linux-kernel}{https://developer.ibm.com/articles/l-linux-kernel}
 \newpage
 
 \section{BIOGRAFIJA MATURANTA}
