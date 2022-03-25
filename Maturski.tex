@@ -63,13 +63,15 @@ Novi Sad, maj 2022. god.
 \newpage
 
 \pagestyle{plain}
-\section{Predgovor}
+\section*{PREDGOVOR}
+\addcontentsline{toc}{section}{PREDGOVOR}
 Za ovu temu sam se opredelio iz više razloga. Prvenstveno zbog ljubavi prema informacionim tehnologijama, koju sam stekao zahvaljujući mojim roditeljima. Drugi razlog je to što smatram da je ovo veoma fascinantna tema, jer obuhvata kompleksnost koje se može postići kada na jednom projektu radi čitav svet. Na kraju, ono što me je privuklo da izaberem baš ovu temu, jeste činjenica da je budućnost IT-a slobodan i besplatan kod.
 \\\\
 U ovom radu analiziraću osnovne komponente jednog izuzetnog operativnog sistema, istoriju njegove kreacije kao i filozofski pogled na isti.
 \newpage
 
-\renewcommand{\contentsname}{Sadržaj}
+\renewcommand{\contentsname}{SADRŽAJ}
+\addcontentsline{toc}{section}{SADRŽAJ}
 \tableofcontents
 \newpage
 
@@ -79,7 +81,8 @@ U ovom radu analiziraću osnovne komponente jednog izuzetnog operativnog sistema
 \rhead{Aleksa Siriški, IV-6}
 \cfoot{\thepage}
 
-\section{Istorija\cite{revos}}
+\section*{Uvod\cite{revos}}
+\addcontentsline{toc}{section}{Uvod}
 MIT u saradnji sa drugim kompanijama su napravili eksperimentalni operativni sistem zvan Multiplexed Information and Computing Service (Multics) 1960. godine. Unics (danas UNIX) su kasnije stvorili i objavili Ken Thompson i Dennis Ritchie  (Slika a) iz AT\&T 1970. godine kao sopstvenu verziju Multics-a. Kasnije je prekucan u C programskom jeziku i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je poput Linuxa i dan danas u upotrebi.
 \\\\
 Richard Matthew Stallman (Slika b), osnivač GNU projekta\cite{gnu}, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena  bila da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
@@ -98,7 +101,7 @@ Linus Torvalds (Slika c) koji je bio isprovociran nedostatkom kernela za potpuno
 \end{figure}
 \newpage
 
-\section{Distribucije}
+\section{DISTRIBUCIJE}
 GNU/Linux operativni sistem se može samostalno napraviti kompajliranjem svih potrebnih programa (npr. Linux From Scratch), ali se najčešće koriste već gotove distribucije. Sve distribucije dele jednu stvar, Linux kernel, ali po svemu ostalom se mogu potpuno razlikovati, doduše većina distribucija ima neke zajedničke osnovne komponente.
 \\\\
 Postoje distribucije pravljene za servere:
@@ -130,7 +133,7 @@ Takođe postoje minimalne distribucije pravljene za kontejnere:
 \end{figure}
 \newpage
 
-\section{Komponente}
+\section{KOMPONENTE}
 \subsection{Kernel}
 Kernel\cite{kernel} je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku komponentu koja je potrebna za korišćenje OS-a kao i da dozvoli komunikaciju softvera sa hardverom, ili jednog softvera sa drugim. Kernel je neophodan da bi operativni sistem funkcionisao i kao takav je ključno da je minimalan i efikasan.
 
@@ -218,7 +221,7 @@ Displej server služi da omogući prikaz GUI-a korisnicima koristeći WIMP (proz
 \end{itemize}
 \newpage
 
-\section{Komande}
+\section{KOMANDE}
 Jedna od velikih prednosti Linux operativnog sistema jeste terminal, kojim je omogućena upotreba kompletnog korisničkog interfejsa. Tek je naknadno ubačena podrška za grafički korisnički interfejs.
 \subsection{Osnovne komande u Linux terminalu}
 \begin{itemize}
@@ -235,7 +238,7 @@ Jedna od velikih prednosti Linux operativnog sistema jeste terminal, kojim je om
 \end{itemize}
 \newpage
 
-\section{Hijerarhija sistema datoteka}
+\section{HIJERARHIJA SISTEMA DATOTEKA}
 Na Linux operativnom sistemu sve je predstavljeno kao fajl - jezgra procesora, sistemski diskovi, čak i tastatura i miš. Hijerarhija sistema datoteka (FSH) definiše strukturu foldera. Sve se nalazi unutar glavnog root foldera i pristupa mu se kosom crtom.
 \subsection{Glavni direktorijumi Linux sistema datoteka}
 \begin{itemize}
@@ -254,7 +257,7 @@ Na Linux operativnom sistemu sve je predstavljeno kao fajl - jezgra procesora, s
 \end{itemize}
 \newpage
 
-\section{Dozvole i vlasništvo}
+\section{DOZVOLE I VLASNIŠTVO}
 Linux operativni sistem za svaki objekat, tj. fajl ili folder, ima određene dozvole. Moguće ih je videti komandom \textbf{ls -l}. Postoje tri vrste dozvola: čitanje, pisanje i pokretanje. Takođe postoje tri vrste vlasništva: vlasnik, grupa i svi ostali. Na ta tri vlasnišva se određuje koje dozvole imaju, koristeći sledeće brojeve:
 \begin{itemize}
 \item 0 - nema nikakvih dozvola
@@ -268,7 +271,7 @@ Linux operativni sistem za svaki objekat, tj. fajl ili folder, ima određene doz
 \end{itemize}
 Dozvole nekog fajla ili foldera se menjaju komandom \textbf{chmod} a vlasništvo komandom \textbf{chown vlasnik:grupa}.
 
-\section{Okruženja radne površine}
+\section{OKRUŽENJA RADNE POVRŠINE}
 Okruženja radne površine su skupovi programa koji omogućavaju korišćenje grafičkog interfejsa. Čine ih razne komponente kao što su menadžer prijava, zaključavajući ekran, tekstualni editor i najvažnije menadžer prozora. Moguće imati samo menadžer prozora i zasebno skidati sve druge potrebne programe za korišćenje grafičkog interfejsa ali korišćenje kompletnog okruženja drastično pojednostavljuje taj proces.
 \subsection{Desktop okruženja sa podrškom za Linux}
 \begin{itemize}
@@ -281,7 +284,7 @@ Okruženja radne površine su skupovi programa koji omogućavaju korišćenje gr
 \end{itemize}
 \newpage
 
-\section{Kontejnerizacija}
+\section{KONTEJNERIZACIJA}
 Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je Linux izbor za najveći procenat servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćim operativnim sistemom i time štede na veličini.
 \subsection{Vrste kontejnerskih okruženja}
 \begin{itemize}
@@ -294,19 +297,21 @@ Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost
 \end{itemize}
 \newpage
 
-\section{Zaključak}
+\section*{Zaključak}
+\addcontentsline{toc}{section}{Zaključak}
 Linux operativni sistem je prvi izbor za najveći broj servera, ali je takođe i korišćen u raznim naučnim i obrazovnim institucijama. Uprkos tome što se bazira na besplatnom modelu postojanjem kompanija kao što su RedHat i mnoštvom sponzora (Microsoft, Google, Facebook/Meta) Linux nastavlja da se eksponencijalno razvija. Programeri iza Linux-a imaju prihode nalik programerima identičnih proizvoda zatvorenog koda, što dokazuje da je etika slobodnog koda uspešna i da ne postoji razlog za zatvorenim kodom osim prikupljanja personalnih podataka bez javnog priznanja o tom postupku. Važno je napomenuti da ako je nešto "otvoren" kod ne znači i da je "slobodan" kod. Otvoren kod dozvoljava svakome da vidi tačno šta se izvršava u programu ali mu ne daje na pravo da radi sa tim kodom šta god poželi, dok slobodan kod omogućuje svakome da ponovo koristi taj kod za nešto potpuno drugo ako će takođe dozvoliti ponovnu upotrebu tog novonastalog koda. Time se drastično smanjuje potreba za pisanjem istog koda iznova. Da bi se sprečila krađa koda i zloupotreba Stallman je osmislio licence za otvoren i slobodan kod (npr. GNU General Public License\cite{gpl}).
 \\\\
 Najčešće neuočljivo ali Linux je prisutan u velikom broju svakodnevnih uređaja. Najpopularniji su Android operativni sistem za pametne telefone koji koristi Linux kernel kao i pametni televizori (npr. Samsung-ova odluka da nove modele televizora preinstalira sa Tyzen-om, Linux distribucijom, umesto AndroidTV-a). U današnje vreme i prosečni korisnik koji nije i ne želi da bude upućen u kompleksne tokove rada računara može vrlo jednostavno da koristi Linux upotrebom gotovih distribucija i usput pokrene većinu Windows programa zahvaljujući sloju kompatibilnosti WINE\cite{wine} i VALVE\cite{valve} PROTON\cite{proton}. Brzinom razvoja i rasprostranjenošću podrške hardvera i softvera vrlo je verovatno da će u bližoj budućnosti Linux zameniti i trenutno glavne Desktop operativne sisteme.
 \newpage
 
 \renewcommand\refname{Literatura}
-\bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Literatura}
+\bibliographystyle{unsrt}
 \bibliography{literatura}
 \newpage
 
-\section{BIOGRAFIJA MATURANTA}
+\section*{BIOGRAFIJA MATURANTA}
+\addcontentsline{toc}{section}{BIOGRAFIJA MATURANTA}
 \begin{wrapfigure}{r}{0.35\textwidth}
 \centering
 \includegraphics[width=.90\linewidth]{Maturska}
