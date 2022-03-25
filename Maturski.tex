@@ -136,14 +136,14 @@ Kernel\cite{kernel} je najvažniji deo svakog operativnog sistema. Služi da pok
 
 \subsubsection{Kategorije kernela\cite{kernelcats}}
 \begin{itemize}
-\item Monolitski - ovde se nalaze svi servisi operativnog sistema se nalaze i izvršavaju se u prostoru samog kernela (eng. \textit{kernel space}). Ima zavisnosti (eng. \textit{dependencies} ) između sistemskih komponenti i ogromne količine linija koda što ga čini veoma kompleksnim.
+\item Monolitski - ovde se nalaze svi servisi operativnog sistema se nalaze i izvršavaju se u prostoru samog kernela. Ima zavisnosti između sistemskih komponenti i ogromne količine linija koda što ga čini veoma kompleksnim.
 \begin{itemize}
 \item Unix
 \item Linux
 \item Open VMS
 \item XTS-400
 \end{itemize}
-\item Mikrokernel - minimalistički, ima virtualnu memoriju i raspoređivanje niti (eng. \textit{thread scheduling}). Samim tim što je manji je i stabilniji, ali zato ima mnogo više sistemskih poziva jer stavlja sve druge procese u korisnički prostor (eng. \textit{user space}).
+\item Mikrokernel - minimalistički, ima virtualnu memoriju i raspoređivanje niti (eng. \textit{thread scheduling}). Samim tim što je manji je i stabilniji, ali zato ima mnogo više sistemskih poziva jer stavlja sve druge procese u korisnički prostor.
 \begin{itemize}
 \item GNU Hurd
 \item Mach (MacOS)
@@ -165,7 +165,7 @@ Kernel\cite{kernel} je najvažniji deo svakog operativnog sistema. Služi da pok
 
 \subsubsection{Osnovni delovi Linux kernela\cite{devibm}}
 \begin{itemize}
-\item Menadžer procesa - kao što mu ime implicira, služi da rukuje procesima tj. programima. Svaki proces je zapravo svoj virtualni procesor, nazvan nit (eng. \textit{thread}). Programi mogu alocirati više niti, takozvanih "radnika" (eng. \textit{workers}). Termin "proces" i "nit" su istog značenja, mada je "proces" više popularan u Desktop aplikacijama.
+\item Menadžer procesa - kao što mu ime implicira, služi da rukuje procesima tj. programima. Svaki proces je zapravo svoj virtualni procesor, nazvan nit. Programi mogu alocirati više niti, takozvanih "radnika". Termin "proces" i "nit" su istog značenja, mada je "proces" više popularan u Desktop aplikacijama.
 \item Menadžer memorije - memorija u Linuxu je programima predstavljena kao gomila stranica koje su potom multiplicirane i dodeljivane po zahtevu tog programa. Standard su stranice od 4KB. Takođe, stranice je moguće prebaciti sa sistemske RAM memorije na hard disk, takav postupak se naziva \textit{swapping}.
 \item Drajveri - kod koji čini najveći deo linux kernela, omogućava korišćenje određenog hardvera.
 \item Virtualni sistem datoteka (VFS) - apstraktuje osnovne komande za manipulaciju podataka čime omogućava korišćenje raznovrsnih sistema datoteka.
@@ -186,20 +186,20 @@ Bootloader je program koji se pokreće pre samog operativnog sistema. Omogućava
 Demoni\cite{daemon}, naziv nastao od Maxwell-ovog demona koji u pozadini sortira molekule, služe da rade baš to: u pozadini postoje bez korisničkog interfejsa i čekaju na neki događaj i da nude usluge.
 
 \subsection{initramfs}
-Init je prvi program koji se pokreće nakon kernela, automatski postaje roditelj svakog narednog programa i poslednji se zaustavlja pri gašenju računara. Kao takav, služi da omogući pristup sistemima datoteka (eng. mount filesystems), da reguliše demone i snabdeva informacije o njima.
+Init je prvi program koji se pokreće nakon kernela, automatski postaje roditelj svakog narednog programa i poslednji se zaustavlja pri gašenju računara. Kao takav, služi da omogući pristup fajl sistemima, da reguliše demone i snabdeva informacije o njima.
 \subsubsection{Init sistemi sa podrškom za Linux}
 \begin{itemize}
 \item systemd - najpopularniji ali i najobimniji, ne prati KISS (\textit{keep it simple, stupid}) jer integriše mnogobrojne dodatne funkcionalnosti kojim init sistem ne bi trebao da se bavi.
 \item OpenRC - prvi izbor za one koje ne vole systemd, minimalan i brz.
 \item GNU Shepherd - Nastao kao deo programa za GNU operativni sistem.
-\item BusyBox - nastao za korišćenje na ugrađenim slabim uređajima (eng. embedded devices).
+\item BusyBox - nastao za korišćenje na ugrađenim slabim uređajima (eng. \textit{embedded devices}).
 \item runit - UNIX init sistem, zamena za SysVinit.
 \item SysVinit - tradicionalni init sistem.
 \end{itemize}
 \newpage
 
 \subsection{Shell}
-Shell (eng. \textit{ljuska}) služi da korisniku pruži isključivo tekstualni interfejs, naziv "ljuska" upućuje da je to spoljni deo operativnog sistema. Korisnik unosi komande i dobija odgovore. Osim pokretanja programa, shell može da koristi izlaz jedne komande kao ulaz druge, što se naziva \textit{piping} (prvo uveden u UNIX-u). Takođe može da se koristi i kao programski jezik pri pisanju shell skripti.
+Ljuska (eng. \textit{shell}) služi da korisniku pruži isključivo tekstualni interfejs, naziv "ljuska" upućuje da je to spoljni deo operativnog sistema. Korisnik unosi komande i dobija odgovore. Osim pokretanja programa, shell može da koristi izlaz jedne komande kao ulaz druge, što se naziva \textit{piping} (prvo uveden u UNIX-u). Takođe može da se koristi i kao programski jezik pri pisanju shell skripti.
 \subsubsection{Shell-ovi sa podrškom za Linux}
 \begin{itemize}
 \item bash - najpopularniji i standard za većinu distribucija, brz i jednostavan. Nastao kao zamena za sh.
@@ -213,7 +213,7 @@ Shell (eng. \textit{ljuska}) služi da korisniku pruži isključivo tekstualni i
 Displej server služi da omogući prikaz GUI-a korisnicima koristeći WIMP (prozori, ikonice, meniji, pokazivač kursora) paradigmu za korisnički interfejs. Svaka aplikacija dobija svoj prozor izmenljive veličine, najčešce pravougaonog oblika.
 \subsubsection{Display serveri sa podrškom za Linux}
 \begin{itemize}
-\item X, X11 ili XOrg - prvi i najkorišćeniji displej server za UNIX-oidne sisteme. Nastao pre više od 30 godina i još uvek u upotrebi zbog spore adopcije drugih protokola. Zahteva dodatan kompozitor (eng. compositor) za bilo kakve efekte (npr. providnost prozora) i VSync.
+\item X, X11 ili XOrg - prvi i najkorišćeniji displej server za UNIX-oidne sisteme. Nastao pre više od 30 godina i još uvek u upotrebi zbog spore adopcije drugih protokola. Zahteva dodatan kompozitor za bilo kakve efekte (npr. providnost prozora) i VSync.
 \item Wayland - nastao u cilju da bude moderna alternativa za X pre više od 10 godina, ali je tek u proteklih par godina počeo eksponencionalno da se razvija i danas je standard na samo par distribucija (Fedora, Ubuntu, openSUSE, Debian). Drastično povećava bezbednost time što dodaje kontrolu dozvola aplikacijama, za razliku od X gde svaka aplikacija može da vidi jedna drugu. Wayland nema dodatne kompozitore, već je svaka primena Wayland protokola sama svoj kompozitor.
 \end{itemize}
 \newpage
@@ -282,7 +282,7 @@ Okruženja radne površine su skupovi programa koji omogućavaju korišćenje gr
 \newpage
 
 \section{Kontejnerizacija}
-Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je Linux izbor za najveći procenat servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćim operativnim sistemom (eng. host OS) i time štede na veličini.
+Kontejnerizacija je jedna od jačih strana Linux operativnog sistema. Mogućnost izolacije programa od ostatka sistema sa minimalnim gubitkom performansi je razlog zašto je Linux izbor za najveći procenat servera. Za razliku od virtualnih mašina, kontejneri dele kernel sa domaćim operativnim sistemom i time štede na veličini.
 \subsection{Vrste kontejnerskih okruženja}
 \begin{itemize}
 \item Linux kontejneri\cite{lxc} - najprostiji vid korišćenja kontejnera na Linuxu, pomoću cgroups iz kernela omogućeno je kreiranje više kontejnera na jednom domaćinu.
