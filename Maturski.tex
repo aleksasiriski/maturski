@@ -67,7 +67,7 @@ Novi Sad, maj 2022. god.
 \addcontentsline{toc}{section}{PREDGOVOR}
 Za ovu temu sam se opredelio iz više razloga. Prvenstveno zbog ljubavi prema informacionim tehnologijama, koju sam stekao zahvaljujući mojim roditeljima. Drugi razlog je to što smatram da je ovo veoma fascinantna tema, jer obuhvata kompleksnost koje se može postići kada na jednom projektu radi čitav svet. Na kraju, ono što me je privuklo da izaberem baš ovu temu, jeste činjenica da je budućnost IT-a slobodan i besplatan kod.
 \\\\
-U ovom radu analiziraću osnovne komponente jednog izuzetnog operativnog sistema, istoriju njegove kreacije kao i filozofski pogled na isti.
+U ovom radu analiziraću osnovne komponente jednog izuzetnog operativnog sistema, njegovu istoriju od nastanka same ideje, kroz višedecenijski razvoj kao i filozofski pogled na isti.
 \newpage
 
 \renewcommand{\contentsname}{SADRŽAJ}
@@ -83,17 +83,17 @@ U ovom radu analiziraću osnovne komponente jednog izuzetnog operativnog sistema
 
 \section*{Uvod\cite{revos}}
 \addcontentsline{toc}{section}{Uvod}
-MIT u saradnji sa drugim kompanijama su napravili eksperimentalni operativni sistem zvan Multiplexed Information and Computing Service (Multics) 1960. godine. Unics (danas UNIX) su kasnije stvorili i objavili Ken Thompson i Dennis Ritchie  (Slika a) iz AT\&T 1970. godine kao sopstvenu verziju Multics-a. Kasnije je preveden u C programski jezik i time postao veoma fleksibilan i izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je poput Linuxa i dan danas u upotrebi.
+Masačusetski tehnološki institut (MIT) u saradnji sa drugim kompanijama napravili su eksperimentalni operativni sistem nazvan \textit{Multiplexed Information and Computing Service} (ili skraćeno Multics) 1960. godine. Unics (danas UNIX) su kasnije stvorili i objavili Ken Tompson i Denis Riči  (Slika a) iz AT\&T 1970. godine kao sopstvenu verziju Multics-a. Kasnije je preveden u C programski jezik i time postao veoma fleksibilan i lako izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je poput Linuxa i danas u upotrebi.
 \\\\
-Richard Matthew Stallman (Slika b), osnivač GNU projekta\cite{gnu}, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena  bila da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
+Ričard Metju Stolmen (Slika b), osnivač GNU projekta\cite{gnu}, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena  bila da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
 \\\\
-Linus Torvalds (Slika c) koji je bio isprovociran nedostatkom kernela za potpuno slobodan i otvoren operativni sistem odlučuje da napiše svoj sopstveni. Već je bio upućen u Minix i GNU softver te je tokom studija u Finskoj započeo projekat nazvan "Linux" (Slika d). U početku je jedini radio na njemu, ali do danas se priključilo preko 15000 programera u kreiranju kernela koji se sastoji iz vise od 17 miliona linija koda\cite{linuxfoundation}.
+Linus Torvalds (Slika c) koji je bio isprovociran nedostatkom kernela za potpuno slobodan i otvoren operativni sistem odlučuje da napiše svoj sopstveni. Već je bio upućen u Minix i GNU softver te je tokom studija u Finskoj započeo projekat nazvan "Linux" (Slika d). U početku je jedini radio na njemu, ali do danas se priključilo preko 15000 programera u razvijanju kernela koji se sastoji iz vise od 17 miliona linija koda\cite{linuxfoundation}.
 \\\\
 \begin{figure}[h]
 	\centering
-    \subfloat[Ken Thompson i Dennis Ritchie, tvorci Unix-a]{{\includegraphics[height=3cm,width=4cm]{ken-thompson-dennis-ritchie} }}
+    \subfloat[Ken Tompson i Denis Riči, tvorci Unix-a]{{\includegraphics[height=3cm,width=4cm]{ken-thompson-dennis-ritchie} }}
     \hspace{1cm}
-    \subfloat[Richard Matthew Stallman, tvorac GNU-a]{{\includegraphics[height=3cm,width=4cm]{richard-stallman} }}
+    \subfloat[Ričard Metju Stolmen, tvorac GNU-a]{{\includegraphics[height=3cm,width=4cm]{richard-stallman} }}
     \hspace{1cm}
     \subfloat[Linus Torvalds, tvorac Linux-a]{{\includegraphics[height=3cm,width=4cm]{linus-torvalds} }}
     \hspace{1cm}
@@ -139,14 +139,14 @@ Kernel\cite{kernel} je najvažniji deo svakog operativnog sistema. Služi da pok
 
 \subsubsection{Kategorije kernela\cite{kernelcats}}
 \begin{itemize}
-\item Monolitski - ovde se nalaze svi servisi operativnog sistema se nalaze i izvršavaju se u prostoru samog kernela. Ima zavisnosti između sistemskih komponenti i ogromne količine linija koda što ga čini veoma kompleksnim.
+\item Monolitski - svi servisi operativnog sistema se nalaze i izvršavaju u prostoru samog kernela. Time se održava zavisnost između sistemskih komponenti koja podrazumeva veću kompleksnost koda što ga čini veoma zahtevnim za održavanje.
 \begin{itemize}
 \item Unix
 \item Linux
 \item Open VMS
 \item XTS-400
 \end{itemize}
-\item Mikrokernel - minimalistički, ima virtualnu memoriju i raspoređivanje niti (eng. \textit{thread scheduling}). Samim tim što je manji je i stabilniji, ali zato ima mnogo više sistemskih poziva jer stavlja sve druge procese u korisnički prostor.
+\item Mikrokernel - minimalistički, ima virtuelnu memoriju i raspoređivanje niti (eng. \textit{thread scheduling}). Samim tim što je manji je i stabilniji, ali zato ima mnogo više sistemskih poziva jer stavlja sve druge procese u korisnički prostor.
 \begin{itemize}
 \item GNU Hurd
 \item Mach (MacOS)
@@ -161,7 +161,7 @@ Kernel\cite{kernel} je najvažniji deo svakog operativnog sistema. Služi da pok
 \item Netware
 \item BeOS
 \end{itemize}
-\item Egzokernel - prati end-to-end princip, ima najmanju apstrakciju hardvera i direktno dodeljuje fizičke resurse aplikacijama.
+\item Egzokernel - prati \textit{end-to-end} princip, ima najmanju apstrakciju hardvera i direktno dodeljuje fizičke resurse aplikacijama.
 \item Nanokernel - samo apstrakcija hardvera, bez sistemskih servisa. Veoma sličan mikrokernelu.
 \end{itemize}
 \newpage
@@ -171,7 +171,7 @@ Kernel\cite{kernel} je najvažniji deo svakog operativnog sistema. Služi da pok
 \item Menadžer procesa - kao što mu ime implicira, služi da rukuje procesima tj. programima. Svaki proces je zapravo svoj virtualni procesor, nazvan nit. Programi mogu alocirati više niti, takozvanih "radnika". Termin "proces" i "nit" su istog značenja, mada je "proces" više popularan u Desktop aplikacijama.
 \item Menadžer memorije - memorija u Linuxu je programima predstavljena kao gomila stranica koje su potom multiplicirane i dodeljivane po zahtevu tog programa. Standard su stranice od 4KB. Takođe, stranice je moguće prebaciti sa sistemske RAM memorije na hard disk, takav postupak se naziva \textit{swapping}.
 \item Drajveri - kod koji čini najveći deo linux kernela, omogućava korišćenje određenog hardvera.
-\item Virtualni sistem datoteka (VFS) - apstraktuje osnovne komande za manipulaciju podataka čime omogućava korišćenje raznovrsnih sistema datoteka.
+\item Virtuelni sistem datoteka (VFS) - apstraktuje osnovne komande za manipulaciju podataka čime omogućava korišćenje raznovrsnih sistema datoteka.
 \end{itemize}
 \newpage
 
@@ -186,7 +186,7 @@ Bootloader je program koji se pokreće pre samog operativnog sistema. Omogućava
 \end{itemize}
 
 \subsection{Daemons}
-Demoni\cite{daemon}, naziv nastao od Maxwell-ovog demona koji u pozadini sortira molekule, služe da rade baš to: u pozadini postoje bez korisničkog interfejsa i čekaju na neki događaj i da nude usluge.
+Demoni\cite{daemon}, naziv nastao od Maksvelovog demona koji u pozadini sortira molekule, služe da rade baš to: u pozadini postoje bez korisničkog interfejsa i čekaju na neki događaj i da nude usluge.
 
 \subsection{initramfs}
 Init je prvi program koji se pokreće nakon kernela, automatski postaje roditelj svakog narednog programa i poslednji se zaustavlja pri gašenju računara. Kao takav, služi da omogući pristup fajl sistemima, da reguliše demone i snabdeva informacije o njima.
