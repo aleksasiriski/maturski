@@ -85,7 +85,7 @@ U ovom radu analiziraću osnovne komponente jednog izuzetnog operativnog sistema
 \addcontentsline{toc}{section}{Uvod}
 Masačusetski tehnološki institut (MIT) u saradnji sa drugim kompanijama napravili su eksperimentalni operativni sistem nazvan \textit{Multiplexed Information and Computing Service} (ili skraćeno Multics) 1960. godine. Unics (danas UNIX) su kasnije stvorili i objavili Ken Tompson i Denis Riči  (Slika a) iz AT\&T 1970. godine kao sopstvenu verziju Multics-a. Kasnije je preveden u C programski jezik i time postao veoma fleksibilan i lako izmenljiv. Razni fakulteti i univerziteti su pravili svoje verzije Unix-a, npr. BSD koji je poput Linuxa i danas u upotrebi.
 \\\\
-Ričard Metju Stolmen (Slika b), osnivač GNU projekta\cite{gnu}, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena  bila da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u zajednicu.
+Ričard Metju Stolmen (Slika b), osnivač GNU projekta\cite{gnu}, je uz svoj tim započeo izradu kompletnog operativnog sistema čija je glavna namena  bila da bude otvorena i slobodna alternativa za Unix. Jedina stvar koja je falila jeste kernel, sto je jezgro operativnog sistema koje služi da poveže sve druge komponente u celinu.
 \\\\
 Linus Torvalds (Slika c) koji je bio isprovociran nedostatkom kernela za potpuno slobodan i otvoren operativni sistem odlučuje da napiše svoj sopstveni. Već je bio upućen u Minix i GNU softver te je tokom studija u Finskoj započeo projekat nazvan "Linux" (Slika d). U početku je jedini radio na njemu, ali do danas se priključilo preko 15000 programera u razvijanju kernela koji se sastoji iz vise od 17 miliona linija koda\cite{linuxfoundation}.
 \\\\
@@ -126,10 +126,13 @@ Takođe postoje minimalne distribucije pravljene za kontejnere:
 \end{itemize}
 \begin{figure}[h]
 	\centering
-    \subfloat[Debian]{{\includegraphics[height=3cm,width=3cm]{debian} }}
-    \subfloat[Ubuntu]{{\includegraphics[height=3cm,width=3cm]{ubuntu} }}
-    \subfloat[Fedora]{{\includegraphics[height=3cm,width=3cm]{fedora} }}
-    \subfloat[Alpine]{{\includegraphics[height=3cm,width=3cm]{alpine} }}
+    \subfloat[Debian]{{\includegraphics[height=3.2cm,width=3.2cm]{debian} }}
+    \hspace{1cm}
+    \subfloat[Ubuntu]{{\includegraphics[height=3.2cm,width=3.2cm]{ubuntu} }}
+    \hspace{1cm}
+    \subfloat[Fedora]{{\includegraphics[height=3.2cm,width=3.2cm]{fedora} }}
+    \hspace{1cm}
+    \subfloat[Alpine]{{\includegraphics[height=3.2cm,width=3.2cm]{alpine} }}
 \end{figure}
 \newpage
 
@@ -137,7 +140,8 @@ Takođe postoje minimalne distribucije pravljene za kontejnere:
 \subsection{Kernel}
 Kernel\cite{kernel} je najvažniji deo svakog operativnog sistema. Služi da pokrene svaku komponentu koja je potrebna za korišćenje OS-a kao i da dozvoli komunikaciju softvera sa hardverom, ili jednog softvera sa drugim. Kernel je neophodan da bi operativni sistem funkcionisao i kao takav je ključno da je minimalan i efikasan.
 
-\subsubsection{Kategorije kernela\cite{kernelcats}}
+\subsubsection{Kategorije kernela}
+Postoje različite vrste kernela\cite{kernelcats}, neki su kompleksniji ali modularniji a neki su jednostavniji i brži.
 \begin{itemize}
 \item Monolitski - svi servisi operativnog sistema se nalaze i izvršavaju u prostoru samog kernela. Time se održava zavisnost između sistemskih komponenti koja podrazumeva veću kompleksnost koda što ga čini veoma zahtevnim za održavanje.
 \begin{itemize}
@@ -166,7 +170,8 @@ Kernel\cite{kernel} je najvažniji deo svakog operativnog sistema. Služi da pok
 \end{itemize}
 \newpage
 
-\subsubsection{Osnovni delovi Linux kernela\cite{devibm}}
+\subsubsection{Delovi Linux kernela}
+Neki od osnovnih delova Linux kernela\cite{devibm}:
 \begin{itemize}
 \item Menadžer procesa - kao što mu ime implicira, služi da rukuje procesima tj. programima. Svaki proces je zapravo svoj virtualni procesor, nazvan nit. Programi mogu alocirati više niti, takozvanih "radnika". Termin "proces" i "nit" su istog značenja, mada je "proces" više popularan u Desktop aplikacijama.
 \item Menadžer memorije - memorija u Linuxu je programima predstavljena kao gomila stranica koje su potom multiplicirane i dodeljivane po zahtevu tog programa. Standard su stranice od 4KB. Takođe, stranice je moguće prebaciti sa sistemske RAM memorije na hard disk, takav postupak se naziva \textit{swapping}.
@@ -258,16 +263,16 @@ Na Linux operativnom sistemu sve je predstavljeno kao fajl - jezgra procesora, s
 \newpage
 
 \section{DOZVOLE I VLASNIŠTVO}
-Linux operativni sistem za svaki objekat, tj. fajl ili folder, ima određene dozvole. Moguće ih je videti komandom \textbf{ls -l}. Postoje tri vrste dozvola: čitanje, pisanje i pokretanje. Takođe postoje tri vrste vlasništva: vlasnik, grupa i svi ostali. Na ta tri vlasnišva se određuje koje dozvole imaju, koristeći sledeće brojeve:
+Linux operativni sistem za svaki objekat, tj. fajl ili folder, ima određene dozvole. Moguće ih je videti komandom \textbf{ls -l}. Postoje tri vrste dozvola: čitanje, pisanje i pokretanje. Takođe postoje tri vrste vlasništva: vlasnik, grupa i svi ostali. Na ta tri vlasnišva se određuje koje dozvole imaju, koristeći sledeće brojeve (pored kojih je prikaz u binarnom sistemu radi lakšeg razumevanja):
 \begin{itemize}
-\item 0 - nema nikakvih dozvola
-\item 1 - dozvola za pokretanje
-\item 2 - dozvola za pisanje
-\item 3 - dozvola za pokretanje i pisanje
-\item 4 - dozvola za čitanje
-\item 5 - dozvola za čitanje i pokretanje
-\item 6 - dozvola za čitanje i pisanje
-\item 7 - ima sve dozvole
+\item 0 - 000 - nema nikakvih dozvola
+\item 1 - 001 - dozvola za pokretanje
+\item 2 - 010 - dozvola za pisanje
+\item 3 - 011 - dozvola za pokretanje i pisanje
+\item 4 - 100 - dozvola za čitanje
+\item 5 - 101 - dozvola za čitanje i pokretanje
+\item 6 - 110 - dozvola za čitanje i pisanje
+\item 7 - 111 - ima sve dozvole
 \end{itemize}
 Dozvole nekog fajla ili foldera se menjaju komandom \textbf{chmod} a vlasništvo komandom \textbf{chown vlasnik:grupa}.
 
