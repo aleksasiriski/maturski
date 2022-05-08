@@ -6,6 +6,7 @@
 \usepackage{subfig}
 \usepackage{wrapfig}
 \usepackage{fancyhdr}
+\usepackage[normalem]{ulem}
 
 \renewcommand{\figurename}{Слика}
 \graphicspath{ {./img/} }
@@ -335,5 +336,28 @@ Linux оперативни систем је први избор за најве
 \end{wrapfigure}
 Алекса Сиришки рођен је 10. јула 2003. године у Новом Саду. Похађао је Основну школу „Светозар Марковић Тоза“ до шестог разреда. Тамо стиче интересовање за математику, информатику, физику и језике. Септембра 2016. уписује Основну школу при Гимназији „Јован Јовановић Змај“, како би интензивније радио у областима математике, физике и информатике. Истовремено похађа програмерски курс „Центар за младе таленте“. Школовање наставља у истој гимназији и опредељује се за смер „Ученици са посебним способностима за рачунарство и информатику“. Наредне четири године, упоредо са школом, похађа и курсеве енглеског и немачког језика. Планира да више образовање стекне на Природно математичком факултету, смер Информационе технологије.
 \newpage
+
+\newcommand{\linija}{\noindent\underline{\makebox[3cm][t]{}}}
+\newcommand{\linijamala}{\noindent\underline{\makebox[1cm][t]{}}}
+\newcommand{\komentar}{\framebox(10cm,5cm)[t]{}}
+\newcommand{\poravnanje}{\makebox[5cm][t]{}}
+\newcommand{\prazan}{\makebox[0cm][t]{}}
+
+\prazan \\
+Датум предаје матурског рада: \linija
+\\\\\\\\\\
+Комисија:
+\begin{quote}
+Председник \hfill \linija \poravnanje
+\\\\
+Испитивач \hfill \linija \poravnanje
+\\\\
+Члан \hfill \linija \poravnanje
+\end{quote}
+\prazan \\\\\\
+Коментар: 
+\\ \prazan \hfill \komentar
+\\\\\\\\\\\\\\
+Датум одбране: \linija \hfill Оцена \linija (\linijamala)
 
 \end{document}
